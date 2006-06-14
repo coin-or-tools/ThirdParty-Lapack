@@ -2110,7 +2110,7 @@ else
   coin_warn_fflags=
 
   if test "$G77" = "yes"; then
-    coin_opt_fflags="-O3 -fomit-frame-pointer"
+    coin_opt_fflags="-O3 -fomit-frame-pointer -ffast-math"
     coin_add_fflags="-pipe"
     coin_dbg_fflags="-g"
     case $build in
