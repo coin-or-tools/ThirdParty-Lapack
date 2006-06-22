@@ -7,7 +7,7 @@ Note: It is YOUR RESPONSIBILITY to ensure that you are entitled to
 
 If you are working under Unix/Linux-like system and you have `wget'
 installed, you can downloaded the required source code for LAPACK
-by executing the included script `get.lapack' in this directory.
+by executing the included script `get.Lapack' in this directory.
 
 Otherwise, follow those instructions:
 

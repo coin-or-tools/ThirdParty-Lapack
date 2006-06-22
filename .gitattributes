@@ -2,4 +2,4 @@
 /INSTALL.LAPACK -text
 /Makefile.am -text
 /configure -text
-/get.lapack -text
+/get.Lapack -text
