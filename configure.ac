@@ -31,6 +31,8 @@ AC_CONFIG_SRCDIR(LAPACK/SRC/dlarf.f)
 # /usr/local.
 AC_PREFIX_DEFAULT([`pwd`])
 
+AC_COIN_PROJECTDIR_INIT
+
 #############################################################################
 #                         Standard build tool stuff                         #
 #############################################################################
