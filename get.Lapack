@@ -19,6 +19,8 @@ gunzip -f lapack-lite-3.1.0.tgz
 
 echo "Unpacking the source code..."
 tar xf lapack-lite-3.1.0.tar lapack-3.1.0/SRC lapack-3.1.0/INSTALL/dlamch.f
+rm -rf LAPACK
+mv lapack-3.1.0 LAPACK
 
 echo "Deleting the tar file..."
 rm lapack-lite-3.1.0.tar

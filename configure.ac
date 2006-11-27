@@ -23,7 +23,7 @@ under the Common Public License.])
 
 # List one file in the package so that the configure script can test
 # whether the package is actually there
-AC_CONFIG_SRCDIR(lapack-3.1.0/SRC/dlarf.f)
+AC_CONFIG_SRCDIR(LAPACK/SRC/dlarf.f)
 
 # Where should everything be installed by default?  Here, we want it
 # to be installed directly in 'bin', 'lib', 'include' subdirectories
@@ -55,9 +55,9 @@ AC_COIN_INIT_AUTO_TOOLS
 
 lapack_source_files='dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
 for file in $lapack_source_files; do
-  AC_CONFIG_LINKS($file:lapack-3.1.0/SRC/$file)
+  AC_CONFIG_LINKS($file:LAPACK/SRC/$file)
 done
-AC_CONFIG_LINKS(dlamch.f:lapack-3.1.0/INSTALL/dlamch.f)
+AC_CONFIG_LINKS(dlamch.f:LAPACK/INSTALL/dlamch.f)
 
 AC_CONFIG_FILES([Makefile])
 
