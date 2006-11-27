@@ -42,7 +42,8 @@ LAPACK_FILES = \
 	dsytd2.f \
 	dsytrd.f \
 	ieeeck.f \
-	ilaenv.f
+	ilaenv.f \
+	iparmq.f
 
 nodist_libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 
