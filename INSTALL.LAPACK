@@ -22,15 +22,15 @@ you tell the configure script where it is (using
 --with-lapack="-LPATH/TO/LAPACKLIBDIR -llapack)
 
 Alternatively, if you want to have the necessary LAPACK routines compiled 
-within this distribution, please download the 'lapack.tgz' tarball from 
-http://www.netlib.org/lapack and unpack it in this directory 
+within this distribution, please download the 'lapack-lite-3.1.0.tgz' tarball
+from http://www.netlib.org/lapack and unpack it in this directory 
 (COIN/Ipopt/SOURCES/OTHERS/lapack):
 
-gunzip lapack.tgz
-tar xf lapack.tar
+gunzip lapack-lite-3.1.0.tgz
+tar xf lapack-lite-3.1.0.tar
 
 If you then run the configure script again, it would automatically detect the 
 sources and prepare the Makefiles so that they will be automaticall compiled.
 
 NOTE: The LAPACK source files are expected to be in the subdirectory
-      LAPACK/SRC of this directory.
+      lapack-3.1.0/SRC and lapack-3.1.0/INSTALL of this directory.

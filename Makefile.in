@@ -55,7 +55,8 @@ DIST_COMMON = $(am__configure_deps) \
 	$(srcdir)/../../config.guess $(srcdir)/../../config.sub \
 	$(srcdir)/../../install-sh $(srcdir)/../../ltmain.sh \
 	$(srcdir)/../../missing $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(top_srcdir)/configure
+	$(srcdir)/Makefile.in $(top_srcdir)/configure \
+	$(top_srcdir)/lapack-3.1.0/INSTALL/dlamch.f
 @HAVE_EXTERNALS_TRUE@am__append_1 = Externals
 @HAVE_EXTERNALS_TRUE@am__append_2 = .Externals-stamp
 subdir = .
@@ -67,7 +68,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno configure.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES =
+CONFIG_CLEAN_FILES = dlamch.f
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libcoinlapack_la_LIBADD =
 am__objects_1 = dlae2.lo dlaev2.lo dlamch.lo dlanst.lo dlansy.lo \
@@ -75,7 +76,7 @@ am__objects_1 = dlae2.lo dlaev2.lo dlamch.lo dlanst.lo dlansy.lo \
 	dlascl.lo dlaset.lo dlasr.lo dlasrt.lo dlassq.lo dlatrd.lo \
 	dorg2l.lo dorg2r.lo dorgql.lo dorgqr.lo dorgtr.lo dpotf2.lo \
 	dpotrf.lo dpotrs.lo dsteqr.lo dsterf.lo dsyev.lo dsytd2.lo \
-	dsytrd.lo ieeeck.lo ilaenv.lo
+	dsytrd.lo ieeeck.lo ilaenv.lo iparmq.lo
 nodist_libcoinlapack_la_OBJECTS = $(am__objects_1)
 libcoinlapack_la_OBJECTS = $(nodist_libcoinlapack_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -263,7 +264,8 @@ LAPACK_FILES = \
 	dsytd2.f \
 	dsytrd.f \
 	ieeeck.f \
-	ilaenv.f
+	ilaenv.f \
+	iparmq.f
 
 nodist_libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
@@ -400,7 +402,7 @@ distclean-tags:
 distdir: $(DISTFILES)
 	$(am__remove_distdir)
 	mkdir $(distdir)
-	$(mkdir_p) $(distdir)/../.. $(distdir)/../../BuildTools
+	$(mkdir_p) $(distdir)/../.. $(distdir)/../../BuildTools $(distdir)/lapack-3.1.0/INSTALL
 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
 	list='$(DISTFILES)'; for file in $$list; do \
