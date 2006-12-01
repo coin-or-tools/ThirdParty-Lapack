@@ -19972,7 +19972,7 @@ fi
 #               Create links to the required source files                   #
 #############################################################################
 
-lapack_source_files='dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
+lapack_source_files='dgetf2.f dgetrf.f dgetrs.f dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlaswp.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
 for file in $lapack_source_files; do
             ac_config_links="$ac_config_links $file:LAPACK/SRC/$file"
 
@@ -21405,11 +21405,75 @@ fi
 
 
 if test x"$coin_vpath_link_files" = x; then : ; else
-  { echo "$as_me:$LINENO: Creating VPATH links for data files" >&5
+  lnkcmd=
+  if test "$enable_doscompile" = yes; then
+    lnkcmd=cp
+  fi
+  case "$CC" in
+    cl* | */cl*)
+      lnkcmd=cp ;;
+  esac
+  if test "$lnkcmd" = cp; then
+    { echo "$as_me:$LINENO: Copying data files for VPATH configuration" >&5
+echo "$as_me: Copying data files for VPATH configuration" >&6;}
+  else
+    echo "$as_me:$LINENO: checking whether ln -s works" >&5
+echo $ECHO_N "checking whether ln -s works... $ECHO_C" >&6
+LN_S=$as_ln_s
+if test "$LN_S" = "ln -s"; then
+  echo "$as_me:$LINENO: result: yes" >&5
+echo "${ECHO_T}yes" >&6
+else
+  echo "$as_me:$LINENO: result: no, using $LN_S" >&5
+echo "${ECHO_T}no, using $LN_S" >&6
+fi
+
+    { echo "$as_me:$LINENO: Creating VPATH links for data files" >&5
 echo "$as_me: Creating VPATH links for data files" >&6;}
+    lnkcmd="$LN_S"
+  fi
   for file in $coin_vpath_link_files; do
+    dir=`(dirname "./$file") 2>/dev/null ||
+$as_expr X"./$file" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
+	 X"./$file" : 'X\(//\)[^/]' \| \
+	 X"./$file" : 'X\(//\)$' \| \
+	 X"./$file" : 'X\(/\)' \| \
+	 .     : '\(.\)' 2>/dev/null ||
+echo X"./$file" |
+    sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{ s//\1/; q; }
+  	  /^X\(\/\/\)[^/].*/{ s//\1/; q; }
+  	  /^X\(\/\/\)$/{ s//\1/; q; }
+  	  /^X\(\/\).*/{ s//\1/; q; }
+  	  s/.*/./; q'`
+    if test -d $dir; then : ; else
+      { if $as_mkdir_p; then
+    mkdir -p $dir
+  else
+    as_dir=$dir
+    as_dirs=
+    while test ! -d "$as_dir"; do
+      as_dirs="$as_dir $as_dirs"
+      as_dir=`(dirname "$as_dir") 2>/dev/null ||
+$as_expr X"$as_dir" : 'X\(.*[^/]\)//*[^/][^/]*/*$' \| \
+	 X"$as_dir" : 'X\(//\)[^/]' \| \
+	 X"$as_dir" : 'X\(//\)$' \| \
+	 X"$as_dir" : 'X\(/\)' \| \
+	 .     : '\(.\)' 2>/dev/null ||
+echo X"$as_dir" |
+    sed '/^X\(.*[^/]\)\/\/*[^/][^/]*\/*$/{ s//\1/; q; }
+  	  /^X\(\/\/\)[^/].*/{ s//\1/; q; }
+  	  /^X\(\/\/\)$/{ s//\1/; q; }
+  	  /^X\(\/\).*/{ s//\1/; q; }
+  	  s/.*/./; q'`
+    done
+    test ! -n "$as_dirs" || mkdir $as_dirs
+  fi || { { echo "$as_me:$LINENO: error: cannot create directory $dir" >&5
+echo "$as_me: error: cannot create directory $dir" >&2;}
+   { (exit 1); exit 1; }; }; }
+
+    fi
     rm -f $file
-    $LN_S $abs_source_dir/$file $file
+    $lnkcmd $abs_source_dir/$file $file
   done
 fi
 

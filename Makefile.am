@@ -11,6 +11,9 @@ EXTRA_DIST = get.lapack INSTALL.LAPACK
 noinst_LTLIBRARIES = libcoinlapack.la
 
 LAPACK_FILES = \
+	dgetf2.f \
+	dgetrf.f \
+	dgetrs.f \
 	dlae2.f \
 	dlaev2.f \
 	dlamch.f \
@@ -26,6 +29,7 @@ LAPACK_FILES = \
 	dlaset.f \
 	dlasr.f \
 	dlasrt.f \
+	dlaswp.f \
 	dlassq.f \
 	dlatrd.f \
 	dorg2l.f \
