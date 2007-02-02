@@ -71,12 +71,13 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES = dlamch.f
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 libcoinlapack_la_LIBADD =
-am__objects_1 = dlae2.lo dlaev2.lo dlamch.lo dlanst.lo dlansy.lo \
-	dlapy2.lo dlarf.lo dlarfb.lo dlarfg.lo dlarft.lo dlartg.lo \
-	dlascl.lo dlaset.lo dlasr.lo dlasrt.lo dlassq.lo dlatrd.lo \
-	dorg2l.lo dorg2r.lo dorgql.lo dorgqr.lo dorgtr.lo dpotf2.lo \
-	dpotrf.lo dpotrs.lo dsteqr.lo dsterf.lo dsyev.lo dsytd2.lo \
-	dsytrd.lo ieeeck.lo ilaenv.lo iparmq.lo
+am__objects_1 = dgetf2.lo dgetrf.lo dgetrs.lo dlae2.lo dlaev2.lo \
+	dlamch.lo dlanst.lo dlansy.lo dlapy2.lo dlarf.lo dlarfb.lo \
+	dlarfg.lo dlarft.lo dlartg.lo dlascl.lo dlaset.lo dlasr.lo \
+	dlasrt.lo dlaswp.lo dlassq.lo dlatrd.lo dorg2l.lo dorg2r.lo \
+	dorgql.lo dorgqr.lo dorgtr.lo dpotf2.lo dpotrf.lo dpotrs.lo \
+	dsteqr.lo dsterf.lo dsyev.lo dsytd2.lo dsytrd.lo ieeeck.lo \
+	ilaenv.lo iparmq.lo
 nodist_libcoinlapack_la_OBJECTS = $(am__objects_1)
 libcoinlapack_la_OBJECTS = $(nodist_libcoinlapack_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -183,12 +184,14 @@ abs_bin_dir = @abs_bin_dir@
 abs_include_dir = @abs_include_dir@
 abs_lib_dir = @abs_lib_dir@
 abs_source_dir = @abs_source_dir@
+ac_c_preproc_warn_flag = @ac_c_preproc_warn_flag@
 ac_ct_AR = @ac_ct_AR@
 ac_ct_CC = @ac_ct_CC@
 ac_ct_CXX = @ac_ct_CXX@
 ac_ct_F77 = @ac_ct_F77@
 ac_ct_RANLIB = @ac_ct_RANLIB@
 ac_ct_STRIP = @ac_ct_STRIP@
+ac_cxx_preproc_warn_flag = @ac_cxx_preproc_warn_flag@
 am__fastdepCC_FALSE = @am__fastdepCC_FALSE@
 am__fastdepCC_TRUE = @am__fastdepCC_TRUE@
 am__fastdepCXX_FALSE = @am__fastdepCXX_FALSE@
@@ -233,6 +236,9 @@ AUTOMAKE_OPTIONS = foreign
 EXTRA_DIST = get.lapack INSTALL.LAPACK $(am__append_1)
 noinst_LTLIBRARIES = libcoinlapack.la
 LAPACK_FILES = \
+	dgetf2.f \
+	dgetrf.f \
+	dgetrs.f \
 	dlae2.f \
 	dlaev2.f \
 	dlamch.f \
@@ -248,6 +254,7 @@ LAPACK_FILES = \
 	dlaset.f \
 	dlasr.f \
 	dlasrt.f \
+	dlaswp.f \
 	dlassq.f \
 	dlatrd.f \
 	dorg2l.f \

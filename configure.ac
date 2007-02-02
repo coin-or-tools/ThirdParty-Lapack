@@ -53,7 +53,7 @@ AC_COIN_INIT_AUTO_TOOLS
 #               Create links to the required source files                   #
 #############################################################################
 
-lapack_source_files='dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
+lapack_source_files='dgetf2.f dgetrf.f dgetrs.f dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlaswp.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
 for file in $lapack_source_files; do
   AC_CONFIG_LINKS($file:LAPACK/SRC/$file)
 done
