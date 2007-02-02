@@ -1,4 +1,8 @@
 * text=auto !eol
+1.0/INSTALL.LAPACK -text
+1.0/Makefile.am -text
+1.0/configure -text
+1.0/get.Lapack -text
 /INSTALL.LAPACK -text
 /Makefile.am -text
 /configure -text
