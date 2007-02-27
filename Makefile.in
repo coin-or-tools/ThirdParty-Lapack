@@ -14,7 +14,7 @@
 
 @SET_MAKE@
 
-# Copyright (C) 2006 International Business Machines and others.
+# Copyright (C) 2006, 2007 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
@@ -80,6 +80,7 @@ am__objects_1 = dgetf2.lo dgetrf.lo dgetrs.lo dlae2.lo dlaev2.lo \
 	ilaenv.lo iparmq.lo
 nodist_libcoinlapack_la_OBJECTS = $(am__objects_1)
 libcoinlapack_la_OBJECTS = $(nodist_libcoinlapack_la_OBJECTS)
+@SKIPMAKE_FALSE@am_libcoinlapack_la_rpath =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
 F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
 LTF77COMPILE = $(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) \
@@ -122,6 +123,10 @@ CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CDEFS = @CDEFS@
 CFLAGS = @CFLAGS@
+COIN_BUILD_LAPACK_FALSE = @COIN_BUILD_LAPACK_FALSE@
+COIN_BUILD_LAPACK_TRUE = @COIN_BUILD_LAPACK_TRUE@
+COIN_HAS_LAPACK_FALSE = @COIN_HAS_LAPACK_FALSE@
+COIN_HAS_LAPACK_TRUE = @COIN_HAS_LAPACK_TRUE@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
@@ -142,6 +147,7 @@ EXEEXT = @EXEEXT@
 F77 = @F77@
 FADDLIBS = @FADDLIBS@
 FFLAGS = @FFLAGS@
+FLIBS = @FLIBS@
 HAVE_EXTERNALS_FALSE = @HAVE_EXTERNALS_FALSE@
 HAVE_EXTERNALS_TRUE = @HAVE_EXTERNALS_TRUE@
 INSTALL_DATA = @INSTALL_DATA@
@@ -161,6 +167,7 @@ MAINT = @MAINT@
 MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
 MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
 MAKEINFO = @MAKEINFO@
+MAKEOKFILE = @MAKEOKFILE@
 MPICC = @MPICC@
 MPIF77 = @MPIF77@
 OBJEXT = @OBJEXT@
@@ -177,6 +184,8 @@ RANLIB = @RANLIB@
 RPATH_FLAGS = @RPATH_FLAGS@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
+SKIPMAKE_FALSE = @SKIPMAKE_FALSE@
+SKIPMAKE_TRUE = @SKIPMAKE_TRUE@
 STRIP = @STRIP@
 VERSION = @VERSION@
 VPATH_DISTCLEANFILES = @VPATH_DISTCLEANFILES@
@@ -234,7 +243,8 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 AUTOMAKE_OPTIONS = foreign
 EXTRA_DIST = get.lapack INSTALL.LAPACK $(am__append_1)
-noinst_LTLIBRARIES = libcoinlapack.la
+@SKIPMAKE_FALSE@noinst_LTLIBRARIES = libcoinlapack.la
+@SKIPMAKE_TRUE@noinst_LTLIBRARIES = 
 LAPACK_FILES = \
 	dgetf2.f \
 	dgetrf.f \
@@ -282,7 +292,7 @@ libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
 ########################################################################
 
 # Files that are generated and should be cleaned with make distclean
-DISTCLEANFILES = $(LAPACK_FILES) $(am__append_2) \
+DISTCLEANFILES = $(LAPACK_FILES) $(MAKEOKFILE) $(am__append_2) \
 	$(VPATH_DISTCLEANFILES)
 all: all-am
 
@@ -331,7 +341,7 @@ clean-noinstLTLIBRARIES:
 	  rm -f "$${dir}/so_locations"; \
 	done
 libcoinlapack.la: $(libcoinlapack_la_OBJECTS) $(libcoinlapack_la_DEPENDENCIES) 
-	$(F77LINK)  $(libcoinlapack_la_LDFLAGS) $(libcoinlapack_la_OBJECTS) $(libcoinlapack_la_LIBADD) $(LIBS)
+	$(F77LINK) $(am_libcoinlapack_la_rpath) $(libcoinlapack_la_LDFLAGS) $(libcoinlapack_la_OBJECTS) $(libcoinlapack_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

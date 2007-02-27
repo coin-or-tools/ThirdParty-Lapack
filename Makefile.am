@@ -1,4 +1,4 @@
-# Copyright (C) 2006 International Business Machines and others.
+# Copyright (C) 2006, 2007 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
@@ -8,7 +8,11 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.lapack INSTALL.LAPACK
 
-noinst_LTLIBRARIES = libcoinlapack.la
+if SKIPMAKE
+  noinst_LTLIBRARIES =
+else
+  noinst_LTLIBRARIES = libcoinlapack.la
+endif
 
 LAPACK_FILES = \
 	dgetf2.f \
@@ -58,6 +62,6 @@ libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
 ########################################################################
 
 # Files that are generated and should be cleaned with make distclean
-DISTCLEANFILES = $(LAPACK_FILES)
+DISTCLEANFILES = $(LAPACK_FILES) $(MAKEOKFILE)
 
 include ../../BuildTools/Makemain.inc
