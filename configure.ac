@@ -50,9 +50,10 @@ AC_COIN_PROG_F77
 AC_COIN_INIT_AUTO_TOOLS
 
 # Check if Lapack is already available on the system or provided by user
+AC_COIN_HAS_BLAS
 AC_COIN_HAS_LAPACK
 MAKEOKFILE=.MakeOk
-if test $coin_has_lapack = yes && test $use_lapack != BUILD; then
+if test $coin_has_lapack = yes && test "$use_lapack" != BUILD; then
   rm -f $MAKEOKFILE
   AC_MSG_NOTICE([The Lapack sources don't need to be compiled])
   MAKEOKFILE=
