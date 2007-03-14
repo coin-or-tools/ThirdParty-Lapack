@@ -1861,9 +1861,9 @@ case $build in
 	       comps="gcc cl"
 	     fi ;;
   sparc-sun-solaris*)
-  	     comps="cc xlc gcc pgcc icc" ;;
-  *-linux-*) comps="xlc gcc cc pgcc icc" ;;
-  *)         comps="xlc_r xlc cc gcc pgcc icc" ;;
+  	     comps="cc xlc icc gcc pgcc icc" ;;
+  *-linux-*) comps="xlc icc gcc cc pgcc icc" ;;
+  *)         comps="xlc_r xlc icc cc gcc pgcc icc" ;;
 esac
 
 # We delete the cached value, since the test might not have been
@@ -3023,11 +3023,11 @@ case $build in
      if test "$enable_doscompile" = msvc ; then
        coin_f77_comps="ifort fl32"
      else
-       coin_f77_comps="gfortran g77 ifort fl32"
+       coin_f77_comps="ifort gfortran g77 fl32"
      fi ;;
   sparc-sun-solaris*)
      coin_f77_comps="f95 f90 f77 xlf fort77 gfortran g77 pgf90 pgf77 ifort ifc frt af77" ;;
-  *) coin_f77_comps="xlf fort77 gfortran f77 g77 pgf90 pgf77 ifort ifc frt af77" ;;
+  *) coin_f77_comps="xlf fort77 ifort ifc gfortran f77 g77 pgf90 pgf77 frt af77" ;;
  esac
 
 
@@ -20917,32 +20917,11 @@ if test x"$use_blas" != x; then
   if test "$use_blas" = "BUILD"; then
     # Don't check for course code if this is executed in ThirdParty/Blas
     if test "$PACKAGE_NAME" != ThirdPartyBlas; then
-      as_ac_File=`echo "ac_cv_file_$coin_blasobjdir/.MakeOk" | $as_tr_sh`
-echo "$as_me:$LINENO: checking for $coin_blasobjdir/.MakeOk" >&5
-echo $ECHO_N "checking for $coin_blasobjdir/.MakeOk... $ECHO_C" >&6
-if eval "test \"\${$as_ac_File+set}\" = set"; then
-  echo $ECHO_N "(cached) $ECHO_C" >&6
-else
-  test "$cross_compiling" = yes &&
-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
-   { (exit 1); exit 1; }; }
-if test -r "$coin_blasobjdir/.MakeOk"; then
-  eval "$as_ac_File=yes"
-else
-  eval "$as_ac_File=no"
-fi
-fi
-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
-echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
-if test `eval echo '${'$as_ac_File'}'` = yes; then
-  :
-else
-  { { echo "$as_me:$LINENO: error: option \"BUILD\" specified for Blas, but $coin_blasobjdir directory is not properly configured" >&5
+      if test -r $coin_blasobjdir/.MakeOk; then :; else
+        { { echo "$as_me:$LINENO: error: option \"BUILD\" specified for Blas, but $coin_blasobjdir directory is not properly configured" >&5
 echo "$as_me: error: option \"BUILD\" specified for Blas, but $coin_blasobjdir directory is not properly configured" >&2;}
    { (exit 1); exit 1; }; }
-fi
-
+      fi
     fi
   elif test "$use_blas" != no ; then
     echo "$as_me:$LINENO: checking whether user supplied BLASLIB=\"$use_blas\" works" >&5
@@ -22482,30 +22461,9 @@ esac
 # If we have no other ideas, consider building BLAS.
   if test -z "$use_blas"; then
     if test "$PACKAGE_NAME" != ThirdPartyBlas; then
-      echo "$as_me:$LINENO: checking if BLAS can be built." >&5
-echo $ECHO_N "checking if BLAS can be built.... $ECHO_C" >&6
-      as_ac_File=`echo "ac_cv_file_$coin_blasobjdir/.MakeOk" | $as_tr_sh`
-echo "$as_me:$LINENO: checking for $coin_blasobjdir/.MakeOk" >&5
-echo $ECHO_N "checking for $coin_blasobjdir/.MakeOk... $ECHO_C" >&6
-if eval "test \"\${$as_ac_File+set}\" = set"; then
-  echo $ECHO_N "(cached) $ECHO_C" >&6
-else
-  test "$cross_compiling" = yes &&
-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
-   { (exit 1); exit 1; }; }
-if test -r "$coin_blasobjdir/.MakeOk"; then
-  eval "$as_ac_File=yes"
-else
-  eval "$as_ac_File=no"
-fi
-fi
-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
-echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
-if test `eval echo '${'$as_ac_File'}'` = yes; then
-  use_blas=BUILD
-fi
-
+      if test -r $coin_blasobjdir/.MakeOk; then
+        use_blas=BUILD
+      fi
     fi
   fi
 fi
@@ -22563,32 +22521,11 @@ if test x"$use_lapack" != x; then
   if test "$use_lapack" = "BUILD"; then
     # Don't check for course code if this is executed in ThirdParty/Blas
     if test "$PACKAGE_NAME" != ThirdPartyLapack; then
-      as_ac_File=`echo "ac_cv_file_$coin_lapackobjdir/.MakeOk" | $as_tr_sh`
-echo "$as_me:$LINENO: checking for $coin_lapackobjdir/.MakeOk" >&5
-echo $ECHO_N "checking for $coin_lapackobjdir/.MakeOk... $ECHO_C" >&6
-if eval "test \"\${$as_ac_File+set}\" = set"; then
-  echo $ECHO_N "(cached) $ECHO_C" >&6
-else
-  test "$cross_compiling" = yes &&
-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
-   { (exit 1); exit 1; }; }
-if test -r "$coin_lapackobjdir/.MakeOk"; then
-  eval "$as_ac_File=yes"
-else
-  eval "$as_ac_File=no"
-fi
-fi
-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
-echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
-if test `eval echo '${'$as_ac_File'}'` = yes; then
-  :
-else
-  { { echo "$as_me:$LINENO: error: option \"BUILD\" specified for LAPACK, but $coin_lapackobjdir directory is not configured" >&5
+      if test -r $coin_lapackobjdir/.MakeOk; then :; else
+        { { echo "$as_me:$LINENO: error: option \"BUILD\" specified for LAPACK, but $coin_lapackobjdir directory is not configured" >&5
 echo "$as_me: error: option \"BUILD\" specified for LAPACK, but $coin_lapackobjdir directory is not configured" >&2;}
    { (exit 1); exit 1; }; }
-fi
-
+      fi
     fi
   else
     echo "$as_me:$LINENO: checking whether user supplied LAPACKLIB=\"$use_lapack\" works" >&5
@@ -24503,28 +24440,9 @@ esac
 # If we have no other ideas, consider building LAPACK.
   if test -z "$use_lapack"; then
     if test "$PACKAGE_NAME" != ThirdPartyLapack; then
-      as_ac_File=`echo "ac_cv_file_$coin_lapackobjdir/.MakeOk" | $as_tr_sh`
-echo "$as_me:$LINENO: checking for $coin_lapackobjdir/.MakeOk" >&5
-echo $ECHO_N "checking for $coin_lapackobjdir/.MakeOk... $ECHO_C" >&6
-if eval "test \"\${$as_ac_File+set}\" = set"; then
-  echo $ECHO_N "(cached) $ECHO_C" >&6
-else
-  test "$cross_compiling" = yes &&
-  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
-echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
-   { (exit 1); exit 1; }; }
-if test -r "$coin_lapackobjdir/.MakeOk"; then
-  eval "$as_ac_File=yes"
-else
-  eval "$as_ac_File=no"
-fi
-fi
-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
-echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
-if test `eval echo '${'$as_ac_File'}'` = yes; then
-  use_lapack=BUILD
-fi
-
+      if test -r $coin_lapackobjdir/.MakeOk; then
+        use_lapack=BUILD
+      fi
     fi
   fi
 fi
