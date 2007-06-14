@@ -20195,7 +20195,7 @@ LT_LDFLAGS=
 }
 
 # Check if Lapack is already available on the system or provided by user
-save_LIBS="$LIBS"
+#save_LIBS="$LIBS"
 ac_ext=f
 ac_compile='$F77 -c $FFLAGS conftest.$ac_ext >&5'
 ac_link='$F77 -o conftest$ac_exeext $FFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
@@ -22529,7 +22529,7 @@ _ACEOF
 
 fi
 
-LIBS="$save_LIBS" # we need to make sure that blas libraries are not in LIBS
+#LIBS="$save_LIBS" # we need to make sure that blas libraries are not in LIBS
 
 coin_lapackobjdir=../ThirdParty/Lapack
 coin_lapacksrcdir=$srcdir/$coin_lapackobjdir

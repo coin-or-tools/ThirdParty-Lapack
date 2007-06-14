@@ -50,9 +50,9 @@ AC_COIN_PROG_F77
 AC_COIN_INIT_AUTO_TOOLS
 
 # Check if Lapack is already available on the system or provided by user
-save_LIBS="$LIBS"
+#save_LIBS="$LIBS"
 AC_COIN_HAS_BLAS
-LIBS="$save_LIBS" # we need to make sure that blas libraries are not in LIBS
+#LIBS="$save_LIBS" # we need to make sure that blas libraries are not in LIBS
 
 AC_COIN_HAS_LAPACK
 MAKEOKFILE=.MakeOk
