@@ -79,7 +79,10 @@ if test x"$MAKEOKFILE" != x; then
   for file in $lapack_source_files; do
     AC_CONFIG_LINKS($file:LAPACK/SRC/$file)
   done
-  AC_CONFIG_LINKS(dlamch.f:LAPACK/INSTALL/dlamch.f)
+  lapack_source_files_in_install='dlamch.f'
+  for file_in_install in $lapack_source_files_in_install; do
+    AC_CONFIG_LINKS($file_in_install:LAPACK/INSTALL/$file_in_install)
+  done
 fi
 
 AC_CONFIG_FILES([Makefile])

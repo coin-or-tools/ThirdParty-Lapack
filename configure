@@ -25014,8 +25014,11 @@ if test x"$MAKEOKFILE" != x; then
               ac_config_links="$ac_config_links $file:LAPACK/SRC/$file"
 
   done
-            ac_config_links="$ac_config_links dlamch.f:LAPACK/INSTALL/dlamch.f"
+  lapack_source_files_in_install='dlamch.f'
+  for file_in_install in $lapack_source_files_in_install; do
+              ac_config_links="$ac_config_links $file_in_install:LAPACK/INSTALL/$file_in_install"
 
+  done
 fi
 
           ac_config_files="$ac_config_files Makefile"
@@ -25721,7 +25724,7 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "$file" ) CONFIG_LINKS="$CONFIG_LINKS $file:LAPACK/SRC/$file" ;;
-  "dlamch.f" ) CONFIG_LINKS="$CONFIG_LINKS dlamch.f:LAPACK/INSTALL/dlamch.f" ;;
+  "$file_in_install" ) CONFIG_LINKS="$CONFIG_LINKS $file_in_install:LAPACK/INSTALL/$file_in_install" ;;
   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
   *) { { echo "$as_me:$LINENO: error: invalid argument: $ac_config_target" >&5
 echo "$as_me: error: invalid argument: $ac_config_target" >&2;}
