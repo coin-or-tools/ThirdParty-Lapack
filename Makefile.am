@@ -57,6 +57,16 @@ nodist_libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 
 libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
 
+dlamch.o: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ $<
+
+dlamch.obj: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ `$(CYGPATH_W) '$<'`
+
+dlamch.lo: dlamch.f
+	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) \
+	$(DBG_FFLAGS) -c -o $@ $<
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################
