@@ -1,4 +1,4 @@
-# Copyright (C) 2006, 2007 International Business Machines and others.
+# Copyright (C) 2006, 2008 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
