@@ -64,7 +64,7 @@ dlamch.obj: dlamch.f
 	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ `$(CYGPATH_W) '$<'`
 
 dlamch.lo: dlamch.f
-	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(ADD_FFLAGS) -c -o $@ $<
+	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
 ########################################################################
 #                         Maintainer Stuff                             #

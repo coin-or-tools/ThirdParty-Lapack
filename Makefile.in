@@ -141,6 +141,7 @@ DBG_CFLAGS = @DBG_CFLAGS@
 DBG_FFLAGS = @DBG_FFLAGS@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DLAMCH_FFLAGS = @DLAMCH_FFLAGS@
 ECHO = @ECHO@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
@@ -652,7 +653,7 @@ dlamch.obj: dlamch.f
 	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ `$(CYGPATH_W) '$<'`
 
 dlamch.lo: dlamch.f
-	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(ADD_FFLAGS) -c -o $@ $<
+	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
 install-doc: $(DocFiles)
 	test -z "$(DocInstallDir)" || $(mkdir_p) "$(DESTDIR)$(DocInstallDir)"
