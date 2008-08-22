@@ -14,7 +14,7 @@
 
 @SET_MAKE@
 
-# Copyright (C) 2006, 2007 International Business Machines and others.
+# Copyright (C) 2006, 2008 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
@@ -141,6 +141,7 @@ DBG_CFLAGS = @DBG_CFLAGS@
 DBG_FFLAGS = @DBG_FFLAGS@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DLAMCH_FFLAGS = @DLAMCH_FFLAGS@
 ECHO = @ECHO@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
@@ -644,6 +645,15 @@ uninstall-am: uninstall-info-am
 	pdf pdf-am ps ps-am tags uninstall uninstall-am \
 	uninstall-info-am
 
+
+dlamch.o: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ $<
+
+dlamch.obj: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ `$(CYGPATH_W) '$<'`
+
+dlamch.lo: dlamch.f
+	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
 install-doc: $(DocFiles)
 	test -z "$(DocInstallDir)" || $(mkdir_p) "$(DESTDIR)$(DocInstallDir)"

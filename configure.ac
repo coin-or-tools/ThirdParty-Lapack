@@ -50,6 +50,15 @@ AC_COIN_DEBUG_COMPILE(Lapack)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
+#Setup special Fortran flags for dlamch.f:
+#do not use optimiziation flags in default (=optimized) mode, but use debug flags in debug mode 
+if test "$coin_debug_compile" = true ; then
+  DLAMCH_FFLAGS="$DBG_FFLAGS"
+else
+  DLAMCH_FFLAGS="$coin_add_fflags $coin_warn_fflags $ADD_FFLAGS"
+fi
+AC_SUBST(DLAMCH_FFLAGS)
+
 # Initialize autotools
 AC_COIN_INIT_AUTO_TOOLS
 

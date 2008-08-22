@@ -1,4 +1,4 @@
-# Copyright (C) 2006, 2007 International Business Machines and others.
+# Copyright (C) 2006, 2008 International Business Machines and others.
 # All Rights Reserved.
 # This file is distributed under the Common Public License.
 
@@ -56,6 +56,15 @@ LAPACK_FILES = \
 nodist_libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 
 libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
+
+dlamch.o: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ $<
+
+dlamch.obj: dlamch.f
+	$(F77) $(AM_FFLAGS) $(DBG_FFLAGS) -c -o $@ `$(CYGPATH_W) '$<'`
+
+dlamch.lo: dlamch.f
+	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
 ########################################################################
 #                         Maintainer Stuff                             #
