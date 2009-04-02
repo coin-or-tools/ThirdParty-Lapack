@@ -50,12 +50,28 @@ AC_COIN_DEBUG_COMPILE(Lapack)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
-#Setup special Fortran flags for dlamch.f:
-#do not use optimiziation flags in default (=optimized) mode, but use debug flags in debug mode 
-if test "$coin_debug_compile" = true ; then
-  DLAMCH_FFLAGS="$DBG_FFLAGS"
-else
-  DLAMCH_FFLAGS="$coin_add_fflags $coin_warn_fflags $ADD_FFLAGS"
+# Take care that optimization is disbled for DLAMCH.F 
+AC_ARG_VAR(DLAMCH_FFLAGS,[Fortran compiler options for DLAMCH.F])
+if test "x$DLAMCH_FFLAGS" = x ; then
+  #disable optimiziation for dlamch.f by adding -Od or -O0 at end of FFLAGS (hope to overwrite previous -O? option, if present) 
+  case $F77 in
+    ifort* | */ifort* | IFORT* | */IFORT* )
+      DLAMCH_FFLAGS="$FFLAGS -Od"
+      ;;
+    compile_f2c*)
+      case "$CC" in
+        cl* | */cl* | CL* | */CL* | icl* | */icl* | ICL* | */ICL*)
+          DLAMCH_FFLAGS="$FFLAGS -Od"
+        ;;
+        *)
+          DLAMCH_FFLAGS="$FFLAGS -O0"
+        ;;
+      esac
+      ;;
+    *)
+      DLAMCH_FFLAGS="$FFLAGS -O0"
+      ;;
+  esac
 fi
 AC_SUBST(DLAMCH_FFLAGS)
 
