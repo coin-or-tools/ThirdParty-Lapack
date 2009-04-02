@@ -3808,7 +3808,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
 
-# Take care that optimization is diabled for DLAMCH.F
+# Take care that optimization is disbled for DLAMCH.F
 
 if test "x$DLAMCH_FFLAGS" = x ; then
   #disable optimiziation for dlamch.f by adding -Od or -O0 at end of FFLAGS (hope to overwrite previous -O? option, if present)

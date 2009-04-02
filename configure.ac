@@ -50,7 +50,7 @@ AC_COIN_DEBUG_COMPILE(Lapack)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
-# Take care that optimization is diabled for DLAMCH.F 
+# Take care that optimization is disbled for DLAMCH.F 
 AC_ARG_VAR(DLAMCH_FFLAGS,[Fortran compiler options for DLAMCH.F])
 if test "x$DLAMCH_FFLAGS" = x ; then
   #disable optimiziation for dlamch.f by adding -Od or -O0 at end of FFLAGS (hope to overwrite previous -O? option, if present) 
