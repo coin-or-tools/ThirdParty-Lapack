@@ -56,7 +56,14 @@ if test "x$DLAMCH_FFLAGS" = x ; then
   #disable optimiziation for dlamch.f by adding -Od or -O0 at end of FFLAGS (hope to overwrite previous -O? option, if present) 
   case $F77 in
     ifort* | */ifort* | IFORT* | */IFORT* )
-      DLAMCH_FFLAGS="$FFLAGS -Od"
+      case $build in
+        *-cygwin* | *-mingw*)
+          DLAMCH_FFLAGS="$FFLAGS -Od"
+          ;;
+        *)
+          DLAMCH_FFLAGS="$FFLAGS -O0"
+          ;;
+      esac
       ;;
     compile_f2c*)
       case "$CC" in
