@@ -66,6 +66,9 @@ dlamch.lo: dlamch.f
 addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Lapack
 addlibs_DATA = lapack_addlibs.txt README
 
+pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
+pkgconfiglib_DATA = lapack.pc
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################

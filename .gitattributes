@@ -4,4 +4,6 @@
 /README -text
 /configure -text
 /get.Lapack -text
+/lapack-uninstalled.pc.in -text
+/lapack.pc.in -text
 /lapack_addlibs.txt.in -text

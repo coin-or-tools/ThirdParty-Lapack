@@ -120,6 +120,6 @@ AC_COIN_HAS_PROJECT(Lapack)
   done
 #fi
 
-AC_CONFIG_FILES([Makefile lapack_addlibs.txt])
+AC_CONFIG_FILES([Makefile lapack_addlibs.txt lapack.pc lapack-uninstalled.pc])
 
 AC_COIN_FINALIZE

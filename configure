@@ -20478,7 +20478,7 @@ echo "${ECHO_T}$coin_has_lapack" >&6
   done
 #fi
 
-                    ac_config_files="$ac_config_files Makefile lapack_addlibs.txt"
+                                        ac_config_files="$ac_config_files Makefile lapack_addlibs.txt lapack.pc lapack-uninstalled.pc"
 
 
 
@@ -21160,6 +21160,8 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "lapack_addlibs.txt" ) CONFIG_FILES="$CONFIG_FILES lapack_addlibs.txt" ;;
+  "lapack.pc" ) CONFIG_FILES="$CONFIG_FILES lapack.pc" ;;
+  "lapack-uninstalled.pc" ) CONFIG_FILES="$CONFIG_FILES lapack-uninstalled.pc" ;;
   "$file" ) CONFIG_LINKS="$CONFIG_LINKS $file:LAPACK/SRC/$file" ;;
   "$file_in_install" ) CONFIG_LINKS="$CONFIG_LINKS $file_in_install:LAPACK/INSTALL/$file_in_install" ;;
   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
