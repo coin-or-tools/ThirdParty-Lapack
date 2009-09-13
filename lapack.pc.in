@@ -1,8 +1,0 @@
-prefix=@prefix@
-libdir=@exec_prefix@/lib/ThirdParty
-
-Name: Lapack
-Description: Linear algebra package
-Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lcoinlapack @ADDLIBS@
-Cflags:

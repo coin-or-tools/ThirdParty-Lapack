@@ -1,9 +1,5 @@
 * text=auto !eol
 /INSTALL.LAPACK -text
 /Makefile.am -text
-/README -text
 /configure -text
 /get.Lapack -text
-/lapack-uninstalled.pc.in -text
-/lapack.pc.in -text
-/lapack_addlibs.txt.in -text
