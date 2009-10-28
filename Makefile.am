@@ -15,12 +15,24 @@ else
 endif
 
 LAPACK_FILES = \
+	dbdsqr.f \
+	dgebd2.f \
+	dgebrd.f \
+	dgelq2.f \
+	dgelqf.f \
+	dgeqr2.f \
+	dgeqrf.f \
+	dgesvd.f \
+	dgesv.f \
 	dgetf2.f \
 	dgetrf.f \
 	dgetrs.f \
+	dlabrd.f \
+	dlacpy.f \
 	dlae2.f \
 	dlaev2.f \
 	dlamch.f \
+	dlange.f \
 	dlanst.f \
 	dlansy.f \
 	dlapy2.f \
@@ -29,18 +41,34 @@ LAPACK_FILES = \
 	dlarfg.f \
 	dlarft.f \
 	dlartg.f \
+	dlas2.f \
 	dlascl.f \
 	dlaset.f \
+	dlasq1.f \
+	dlasq2.f \
+	dlasq5.f \
+	dlasq6.f \
 	dlasr.f \
 	dlasrt.f \
 	dlaswp.f \
 	dlassq.f \
+	dlasv2.f \
 	dlatrd.f \
+	dlazq3.f \
+	dlazq4.f \
 	dorg2l.f \
 	dorg2r.f \
+	dorgbr.f \
+	dorglq.f \
+	dorgl2.f \
 	dorgql.f \
 	dorgqr.f \
 	dorgtr.f \
+	dorm2r.f \
+	dormbr.f \
+	dorml2.f \
+	dormlq.f \
+	dormqr.f \
 	dpotf2.f \
 	dpotrf.f \
 	dpotrs.f \
