@@ -12,7 +12,7 @@
 
 AC_PREREQ(2.59)
 
-AC_INIT([ThirdPartyLapack],[1.0stable],
+AC_INIT([ThirdPartyLapack],[1.0.20],
         [http://projects.coin-or.org/BuildTools/newticket])
 
 AC_COPYRIGHT([
@@ -31,7 +31,7 @@ AC_CONFIG_SRCDIR(LAPACK/SRC/dlarf.f)
 # /usr/local.
 AC_PREFIX_DEFAULT([`pwd`])
 
-AC_COIN_PROJECTDIR_INIT
+AC_COIN_PROJECTDIR_INIT(1:20:0)
 
 #############################################################################
 #                         Standard build tool stuff                         #
