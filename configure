@@ -472,7 +472,7 @@ ac_includes_default="\
 # include <unistd.h>
 #endif"
 
-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS ADDLIBS FADDLIBS ALWAYS_FALSE_TRUE ALWAYS_FALSE_FALSE build build_cpu build_vendor build_os CDEFS ADD_CFLAGS DBG_CFLAGS OPT_CFLAGS sol_cc_compiler CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT MPICC ADD_FFLAGS DBG_FFLAGS OPT_FFLAGS F77 FFLAGS ac_ct_F77 MPIF77 DLAMCH_FFLAGS EGREP INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT LIBTOOLM4 have_autoconf have_automake have_svn BUILDTOOLSDIR AUX_DIR abs_source_dir abs_lib_dir abs_include_dir abs_bin_dir HAVE_EXTERNALS_TRUE HAVE_EXTERNALS_FALSE host host_cpu host_vendor host_os LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CXXCPP LIBTOOL ac_c_preproc_warn_flag ac_cxx_preproc_warn_flag RPATH_FLAGS LT_LDFLAGS BLASSRCDIR BLASOBJDIR BLASDOCDIR BLASDATADIR BLASINSTDIR COIN_HAS_BLAS_TRUE COIN_HAS_BLAS_FALSE COIN_HAS_BLAS_PREINSTALLED_TRUE COIN_HAS_BLAS_PREINSTALLED_FALSE LAPACKSRCDIR LAPACKOBJDIR LAPACKDOCDIR LAPACKDATADIR LAPACKINSTDIR COIN_HAS_LAPACK_TRUE COIN_HAS_LAPACK_FALSE COIN_HAS_LAPACK_PREINSTALLED_TRUE COIN_HAS_LAPACK_PREINSTALLED_FALSE LIBEXT VPATH_DISTCLEANFILES LIBOBJS LTLIBOBJS'
+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS ADDLIBS FADDLIBS ALWAYS_FALSE_TRUE ALWAYS_FALSE_FALSE build build_cpu build_vendor build_os CDEFS ADD_CFLAGS DBG_CFLAGS OPT_CFLAGS sol_cc_compiler CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT MPICC ADD_FFLAGS DBG_FFLAGS OPT_FFLAGS F77 FFLAGS ac_ct_F77 MPIF77 DLAMCH_FFLAGS EGREP INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE am__fastdepCC_TRUE am__fastdepCC_FALSE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT LIBTOOLM4 have_autoconf have_automake have_svn BUILDTOOLSDIR AUX_DIR abs_source_dir abs_lib_dir abs_include_dir abs_bin_dir HAVE_EXTERNALS_TRUE HAVE_EXTERNALS_FALSE host host_cpu host_vendor host_os LN_S ECHO AR ac_ct_AR RANLIB ac_ct_RANLIB CPP CXX CXXFLAGS ac_ct_CXX CXXDEPMODE am__fastdepCXX_TRUE am__fastdepCXX_FALSE CXXCPP LIBTOOL ac_c_preproc_warn_flag ac_cxx_preproc_warn_flag RPATH_FLAGS LT_LDFLAGS LIBEXT VPATH_DISTCLEANFILES ABSBUILDDIR LIBOBJS LTLIBOBJS'
 ac_subst_files=''
 
 # Initialize some variables set by options.
@@ -1104,18 +1104,6 @@ Optional Packages:
                           both]
   --with-tags[=TAGS]
                           include additional configurations [automatic]
-  --with-blas-instdir prefix of installation directory for precompiled Blas
-                          package
-  --with-blas-srcdir source directory for Blas package
-  --with-blas-objdir object directory for Blas package (if different from
-                          source directory in VPATH compilation)
-  --with-coin-instdir     prefix of installation directory for precompiled
-                          COIN packages
-  --with-lapack-instdir prefix of installation directory for precompiled
-                          Lapack package
-  --with-lapack-srcdir source directory for Lapack package
-  --with-lapack-objdir object directory for Lapack package (if different from
-                          source directory in VPATH compilation)
 
 Some influential environment variables:
   CDEFS       Additional -D flags to be used when compiling C code.
@@ -3305,7 +3293,7 @@ fi
 
 
 # Provide some information about the compiler.
-echo "$as_me:3308:" \
+echo "$as_me:3296:" \
      "checking for Fortran 77 compiler version" >&5
 ac_compiler=`set X $ac_compile; echo $2`
 { (eval echo "$as_me:$LINENO: \"$ac_compiler --version </dev/null >&5\"") >&5
@@ -5486,7 +5474,7 @@ ia64-*-hpux*)
   ;;
 *-*-irix6*)
   # Find out which ABI we are using.
-  echo '#line 5489 "configure"' > conftest.$ac_ext
+  echo '#line 5477 "configure"' > conftest.$ac_ext
   if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
   (eval $ac_compile) 2>&5
   ac_status=$?
@@ -7915,11 +7903,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7918: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7906: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:7922: \$? = $ac_status" >&5
+   echo "$as_me:7910: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -8183,11 +8171,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:8186: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:8174: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:8190: \$? = $ac_status" >&5
+   echo "$as_me:8178: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -8287,11 +8275,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:8290: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:8278: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:8294: \$? = $ac_status" >&5
+   echo "$as_me:8282: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -10632,7 +10620,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 10635 "configure"
+#line 10623 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -10732,7 +10720,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 10735 "configure"
+#line 10723 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -13076,11 +13064,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:13079: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:13067: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:13083: \$? = $ac_status" >&5
+   echo "$as_me:13071: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -13180,11 +13168,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:13183: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:13171: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:13187: \$? = $ac_status" >&5
+   echo "$as_me:13175: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -14750,11 +14738,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14753: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14741: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:14757: \$? = $ac_status" >&5
+   echo "$as_me:14745: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -14854,11 +14842,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:14857: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:14845: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:14861: \$? = $ac_status" >&5
+   echo "$as_me:14849: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -17061,11 +17049,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:17064: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:17052: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:17068: \$? = $ac_status" >&5
+   echo "$as_me:17056: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -17329,11 +17317,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:17332: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:17320: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:17336: \$? = $ac_status" >&5
+   echo "$as_me:17324: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -17433,11 +17421,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:17436: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:17424: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:17440: \$? = $ac_status" >&5
+   echo "$as_me:17428: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -20335,474 +20323,20 @@ fi
 #END
 }
 
-echo "$as_me:$LINENO: checking for COIN project Blas in " >&5
-echo $ECHO_N "checking for COIN project Blas in ... $ECHO_C" >&6
-# First check, if the sub-project is actually available (ToDo: allow
-# other locations)
-
-#replace backslashes by underscore
-#m4_define([escape], m4_bpatsubsts([Blas],[/],[_]))
-
-coin_has_blas=notGiven
-if test x"$COIN_SKIP_PROJECTS" != x; then
-  for dir in $COIN_SKIP_PROJECTS; do
-    if test $dir = Blas; then
-      coin_has_blas=skipping
-    fi
-  done
-fi
-
-
-
-
-
-
-BLASSRCDIR=This_Variable_Is_Not_Set
-BLASOBJDIR=This_Variable_Is_Not_Set
-BLASDOCDIR=This_Variable_Is_Not_Set
-BLASDATADIR=This_Variable_Is_Not_Set
-BLASINSTDIR=This_Variable_Is_Not_Set
-
-if test $coin_has_blas != skipping; then
-  if test $PACKAGE_TARNAME = blas; then
-    coin_has_blas=.
-  else
-
-# Check whether --with-m4_tolower(Blas)-instdir or --without-m4_tolower(Blas)-instdir was given.
-if test "${with_blas_instdir+set}" = set; then
-  withval="$with_blas_instdir"
-  coin_has_blas=installed
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-blas-instdir not a directory" >&5
-echo "$as_me: error: argument for --with-blas-instdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-                 BLASINSTDIR=`cd $withval; pwd`
-fi;
-
-
-# Check whether --with-m4_tolower(Blas)-srcdir or --without-m4_tolower(Blas)-srcdir was given.
-if test "${with_blas_srcdir+set}" = set; then
-  withval="$with_blas_srcdir"
-  if test "$coin_has_blas" = installed; then
-		   { { echo "$as_me:$LINENO: error: --with-$blas-srcdir cannot be given together with --with-blas-instdir" >&5
-echo "$as_me: error: --with-$blas-srcdir cannot be given together with --with-blas-instdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-blas-srcdir not a directory" >&5
-echo "$as_me: error: argument for --with-blas-srcdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 coin_has_blas=$withval
-                 BLASSRCDIR=`cd $withval; pwd`
-fi;
-
-
-# Check whether --with-m4_tolower(Blas)-objdir or --without-m4_tolower(Blas)-objdir was given.
-if test "${with_blas_objdir+set}" = set; then
-  withval="$with_blas_objdir"
-  if test "$coin_has_blas" = installed; then
-		   { { echo "$as_me:$LINENO: error: --with-blas-objdir cannot be given together with --with-blas-instdir" >&5
-echo "$as_me: error: --with-blas-objdir cannot be given together with --with-blas-instdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test "$coin_has_blas" = notGiven; then
-		   { { echo "$as_me:$LINENO: error: --with-blas-objdir must be accompanied by --with-blas-srcdir" >&5
-echo "$as_me: error: --with-blas-objdir must be accompanied by --with-blas-srcdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-blas-objdir not a directory" >&5
-echo "$as_me: error: argument for --with-blas-objdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-                 BLASOBJDIR=`cd $withval; pwd`
-else
-  BLASOBJDIR="$BLASSRCDIR"
-fi;
-
-    # if we still don't have a location, check for generic flag
-    if test "$coin_has_blas" = notGiven; then
-
-# Check whether --with-coin-instdir or --without-coin-instdir was given.
-if test "${with_coin_instdir+set}" = set; then
-  withval="$with_coin_instdir"
-  if test -d "$withval"; then : ; else
-		     { { echo "$as_me:$LINENO: error: argument for --with-coin-instdir not a directory" >&5
-echo "$as_me: error: argument for --with-coin-instdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		   fi
-		   if test -r $withval/share/doc/coin/Blas/README;
-
-                   then
-		     coin_has_blas=installed
-		     BLASINSTDIR=`cd $withval; pwd`
-		   fi
-fi;
-    fi
-
-    # check if project can be found in /Blas
-    # this is for the classic setup when this macro is called from AC_COIN_MAIN_SUBDIR
-    fulldir=Blas
-
-    if test "$coin_has_blas" = notGiven; then
-      if test -d $srcdir/$fulldir; then
-         coin_has_blas=$fulldir
-
-
-      fi
-    fi
-
-    # check if project can be found in ..//Blas
-    # this is for the classic setup when this macro is called from the project main directory
-    fulldir=../Blas
-
-    if test "$coin_has_blas" = notGiven; then
-      if test -d $srcdir/$fulldir; then
-         coin_has_blas=$fulldir
-
-
-      fi
-    fi
-  fi
-fi
-
-if test $coin_has_blas != notGiven &&
-   test $coin_has_blas != skipping; then
-  # Set the #define if the component is available
-
-cat >>confdefs.h <<\_ACEOF
-#define COIN_HAS_BLAS 1
-_ACEOF
-
-
-  if test $coin_has_blas = installed; then
-    BLASDOCDIR=$BLASINSTDIR/share/doc/coin/Blas
-       BLASDATADIR=$BLASINSTDIR/share/coin/Blas
-
-  else
-    if test "$BLASOBJDIR" = This_Variable_Is_Not_Set; then
-      # Set the variables for source and object code location
-      BLASSRCDIR=`cd $srcdir/$coin_has_blas; pwd`
-      BLASOBJDIR=`pwd`/$coin_has_blas
-      BLASDOCDIR=$abs_lib_dir/../share/doc/coin/Blas
-
-      BLASDATADIR=$BLASOBJDIR
-    else
-      # This is just a guess:
-      BLASDOCDIR=$BLASOBJDIR/../share/doc/coin/Blas
-         BLASDATADIR=$BLASOBJDIR/../share/coin/Blas
-
-    fi
-  fi
-fi
-
-# Define the Makefile conditional
-
-
-if test $coin_has_blas != notGiven &&
-                test $coin_has_blas != skipping; then
-  COIN_HAS_BLAS_TRUE=
-  COIN_HAS_BLAS_FALSE='#'
-else
-  COIN_HAS_BLAS_TRUE='#'
-  COIN_HAS_BLAS_FALSE=
-fi
-
-
-
-if test $coin_has_blas = installed; then
-  COIN_HAS_BLAS_PREINSTALLED_TRUE=
-  COIN_HAS_BLAS_PREINSTALLED_FALSE='#'
-else
-  COIN_HAS_BLAS_PREINSTALLED_TRUE='#'
-  COIN_HAS_BLAS_PREINSTALLED_FALSE=
-fi
-
-
-if test $coin_has_blas = installed; then
-  echo "$as_me:$LINENO: result: installed in $BLASINSTDIR" >&5
-echo "${ECHO_T}installed in $BLASINSTDIR" >&6
-  if test -r $BLASINSTDIR/share/doc/coin/Blas/README; then
-
-  :
-else
-  { { echo "$as_me:$LINENO: error: $BLASINSTDIR/share/doc/coin/Blas/README should be available if Blas is installed" >&5
-echo "$as_me: error: $BLASINSTDIR/share/doc/coin/Blas/README should be available if Blas is installed" >&2;}
-   { (exit 1); exit 1; }; }
-  :
-fi
-
-
-
-else
-  echo "$as_me:$LINENO: result: $coin_has_blas" >&5
-echo "${ECHO_T}$coin_has_blas" >&6
-  if test $coin_has_blas != notGiven &&
-     test $coin_has_blas != skipping; then
-    echo "$as_me:$LINENO: checking for source code location of Blas" >&5
-echo $ECHO_N "checking for source code location of Blas... $ECHO_C" >&6
-    echo "$as_me:$LINENO: result: $BLASSRCDIR" >&5
-echo "${ECHO_T}$BLASSRCDIR" >&6
-    echo "$as_me:$LINENO: checking for object code location of Blas" >&5
-echo $ECHO_N "checking for object code location of Blas... $ECHO_C" >&6
-    echo "$as_me:$LINENO: result: $BLASOBJDIR" >&5
-echo "${ECHO_T}$BLASOBJDIR" >&6
-  fi
-fi
-
-echo "$as_me:$LINENO: checking for COIN project Lapack in " >&5
-echo $ECHO_N "checking for COIN project Lapack in ... $ECHO_C" >&6
-# First check, if the sub-project is actually available (ToDo: allow
-# other locations)
-
-#replace backslashes by underscore
-#m4_define([escape], m4_bpatsubsts([Lapack],[/],[_]))
-
-coin_has_lapack=notGiven
-if test x"$COIN_SKIP_PROJECTS" != x; then
-  for dir in $COIN_SKIP_PROJECTS; do
-    if test $dir = Lapack; then
-      coin_has_lapack=skipping
-    fi
-  done
-fi
-
-
-
-
-
-
-LAPACKSRCDIR=This_Variable_Is_Not_Set
-LAPACKOBJDIR=This_Variable_Is_Not_Set
-LAPACKDOCDIR=This_Variable_Is_Not_Set
-LAPACKDATADIR=This_Variable_Is_Not_Set
-LAPACKINSTDIR=This_Variable_Is_Not_Set
-
-if test $coin_has_lapack != skipping; then
-  if test $PACKAGE_TARNAME = lapack; then
-    coin_has_lapack=.
-  else
-
-# Check whether --with-m4_tolower(Lapack)-instdir or --without-m4_tolower(Lapack)-instdir was given.
-if test "${with_lapack_instdir+set}" = set; then
-  withval="$with_lapack_instdir"
-  coin_has_lapack=installed
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-lapack-instdir not a directory" >&5
-echo "$as_me: error: argument for --with-lapack-instdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-                 LAPACKINSTDIR=`cd $withval; pwd`
-fi;
-
-
-# Check whether --with-m4_tolower(Lapack)-srcdir or --without-m4_tolower(Lapack)-srcdir was given.
-if test "${with_lapack_srcdir+set}" = set; then
-  withval="$with_lapack_srcdir"
-  if test "$coin_has_lapack" = installed; then
-		   { { echo "$as_me:$LINENO: error: --with-$lapack-srcdir cannot be given together with --with-lapack-instdir" >&5
-echo "$as_me: error: --with-$lapack-srcdir cannot be given together with --with-lapack-instdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-lapack-srcdir not a directory" >&5
-echo "$as_me: error: argument for --with-lapack-srcdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 coin_has_lapack=$withval
-                 LAPACKSRCDIR=`cd $withval; pwd`
-fi;
-
-
-# Check whether --with-m4_tolower(Lapack)-objdir or --without-m4_tolower(Lapack)-objdir was given.
-if test "${with_lapack_objdir+set}" = set; then
-  withval="$with_lapack_objdir"
-  if test "$coin_has_lapack" = installed; then
-		   { { echo "$as_me:$LINENO: error: --with-lapack-objdir cannot be given together with --with-lapack-instdir" >&5
-echo "$as_me: error: --with-lapack-objdir cannot be given together with --with-lapack-instdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test "$coin_has_lapack" = notGiven; then
-		   { { echo "$as_me:$LINENO: error: --with-lapack-objdir must be accompanied by --with-lapack-srcdir" >&5
-echo "$as_me: error: --with-lapack-objdir must be accompanied by --with-lapack-srcdir" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-		 if test -d "$withval"; then : ; else
-		   { { echo "$as_me:$LINENO: error: argument for --with-lapack-objdir not a directory" >&5
-echo "$as_me: error: argument for --with-lapack-objdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		 fi
-                 LAPACKOBJDIR=`cd $withval; pwd`
-else
-  LAPACKOBJDIR="$LAPACKSRCDIR"
-fi;
-
-    # if we still don't have a location, check for generic flag
-    if test "$coin_has_lapack" = notGiven; then
-
-# Check whether --with-coin-instdir or --without-coin-instdir was given.
-if test "${with_coin_instdir+set}" = set; then
-  withval="$with_coin_instdir"
-  if test -d "$withval"; then : ; else
-		     { { echo "$as_me:$LINENO: error: argument for --with-coin-instdir not a directory" >&5
-echo "$as_me: error: argument for --with-coin-instdir not a directory" >&2;}
-   { (exit 1); exit 1; }; }
-		   fi
-		   if test -r $withval/share/doc/coin/Lapack/README;
-
-                   then
-		     coin_has_lapack=installed
-		     LAPACKINSTDIR=`cd $withval; pwd`
-		   fi
-fi;
-    fi
-
-    # check if project can be found in /Lapack
-    # this is for the classic setup when this macro is called from AC_COIN_MAIN_SUBDIR
-    fulldir=Lapack
-
-    if test "$coin_has_lapack" = notGiven; then
-      if test -d $srcdir/$fulldir; then
-         coin_has_lapack=$fulldir
-
-
-      fi
-    fi
-
-    # check if project can be found in ..//Lapack
-    # this is for the classic setup when this macro is called from the project main directory
-    fulldir=../Lapack
-
-    if test "$coin_has_lapack" = notGiven; then
-      if test -d $srcdir/$fulldir; then
-         coin_has_lapack=$fulldir
-
-
-      fi
-    fi
-  fi
-fi
-
-if test $coin_has_lapack != notGiven &&
-   test $coin_has_lapack != skipping; then
-  # Set the #define if the component is available
-
-cat >>confdefs.h <<\_ACEOF
-#define COIN_HAS_LAPACK 1
-_ACEOF
-
-
-  if test $coin_has_lapack = installed; then
-    LAPACKDOCDIR=$LAPACKINSTDIR/share/doc/coin/Lapack
-       LAPACKDATADIR=$LAPACKINSTDIR/share/coin/Lapack
-
-  else
-    if test "$LAPACKOBJDIR" = This_Variable_Is_Not_Set; then
-      # Set the variables for source and object code location
-      LAPACKSRCDIR=`cd $srcdir/$coin_has_lapack; pwd`
-      LAPACKOBJDIR=`pwd`/$coin_has_lapack
-      LAPACKDOCDIR=$abs_lib_dir/../share/doc/coin/Lapack
-
-      LAPACKDATADIR=$LAPACKOBJDIR
-    else
-      # This is just a guess:
-      LAPACKDOCDIR=$LAPACKOBJDIR/../share/doc/coin/Lapack
-         LAPACKDATADIR=$LAPACKOBJDIR/../share/coin/Lapack
-
-    fi
-  fi
-fi
-
-# Define the Makefile conditional
-
-
-if test $coin_has_lapack != notGiven &&
-                test $coin_has_lapack != skipping; then
-  COIN_HAS_LAPACK_TRUE=
-  COIN_HAS_LAPACK_FALSE='#'
-else
-  COIN_HAS_LAPACK_TRUE='#'
-  COIN_HAS_LAPACK_FALSE=
-fi
-
-
-
-if test $coin_has_lapack = installed; then
-  COIN_HAS_LAPACK_PREINSTALLED_TRUE=
-  COIN_HAS_LAPACK_PREINSTALLED_FALSE='#'
-else
-  COIN_HAS_LAPACK_PREINSTALLED_TRUE='#'
-  COIN_HAS_LAPACK_PREINSTALLED_FALSE=
-fi
-
-
-if test $coin_has_lapack = installed; then
-  echo "$as_me:$LINENO: result: installed in $LAPACKINSTDIR" >&5
-echo "${ECHO_T}installed in $LAPACKINSTDIR" >&6
-  if test -r $LAPACKINSTDIR/share/doc/coin/Lapack/README; then
-
-  :
-else
-  { { echo "$as_me:$LINENO: error: $LAPACKINSTDIR/share/doc/coin/Lapack/README should be available if Lapack is installed" >&5
-echo "$as_me: error: $LAPACKINSTDIR/share/doc/coin/Lapack/README should be available if Lapack is installed" >&2;}
-   { (exit 1); exit 1; }; }
-  :
-fi
-
-
-
-else
-  echo "$as_me:$LINENO: result: $coin_has_lapack" >&5
-echo "${ECHO_T}$coin_has_lapack" >&6
-  if test $coin_has_lapack != notGiven &&
-     test $coin_has_lapack != skipping; then
-    echo "$as_me:$LINENO: checking for source code location of Lapack" >&5
-echo $ECHO_N "checking for source code location of Lapack... $ECHO_C" >&6
-    echo "$as_me:$LINENO: result: $LAPACKSRCDIR" >&5
-echo "${ECHO_T}$LAPACKSRCDIR" >&6
-    echo "$as_me:$LINENO: checking for object code location of Lapack" >&5
-echo $ECHO_N "checking for object code location of Lapack... $ECHO_C" >&6
-    echo "$as_me:$LINENO: result: $LAPACKOBJDIR" >&5
-echo "${ECHO_T}$LAPACKOBJDIR" >&6
-  fi
-fi
-
-
-# Check if Lapack is already available on the system or provided by user
-#save_LIBS="$LIBS"
-#AC_COIN_HAS_BLAS
-#LIBS="$save_LIBS" # we need to make sure that blas libraries are not in LIBS
-
-#AC_COIN_HAS_LAPACK
-#MAKEOKFILE=.MakeOk
-#if test $coin_has_lapack = yes && test "$use_lapack" != BUILD; then
-#  rm -f $MAKEOKFILE
-#  AC_MSG_NOTICE([The Lapack sources don't need to be compiled])
-#  MAKEOKFILE=
-#else
-#  touch $MAKEOKFILE
-#fi
-#AC_SUBST(MAKEOKFILE)
-#AM_CONDITIONAL(SKIPMAKE, test -z "$MAKEOKFILE")
-
 #############################################################################
 #               Create links to the required source files                   #
 #############################################################################
 
-#if test x"$MAKEOKFILE" != x; then
-  lapack_source_files='dgetf2.f dgetrf.f dgetrs.f dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlaswp.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
-  for file in $lapack_source_files; do
-              ac_config_links="$ac_config_links $file:LAPACK/SRC/$file"
+lapack_source_files='dgetf2.f dgetrf.f dgetrs.f dlae2.f dlaev2.f dlanst.f dlansy.f dlapy2.f dlarf.f dlarfb.f dlarfg.f dlarft.f dlartg.f dlascl.f dlaset.f dlasr.f dlasrt.f dlassq.f dlaswp.f dlatrd.f dorg2l.f dorg2r.f dorgql.f dorgqr.f dorgtr.f dpotf2.f dpotrf.f dpotrs.f dsteqr.f dsterf.f dsyev.f dsytd2.f dsytrd.f ieeeck.f ilaenv.f iparmq.f'
+for file in $lapack_source_files; do
+            ac_config_links="$ac_config_links $file:LAPACK/SRC/$file"
 
-  done
-  lapack_source_files_in_install='dlamch.f'
-  for file_in_install in $lapack_source_files_in_install; do
-              ac_config_links="$ac_config_links $file_in_install:LAPACK/INSTALL/$file_in_install"
+done
+lapack_source_files_in_install='dlamch.f'
+for file_in_install in $lapack_source_files_in_install; do
+            ac_config_links="$ac_config_links $file_in_install:LAPACK/INSTALL/$file_in_install"
 
-  done
-#fi
+done
 
                                         ac_config_files="$ac_config_files Makefile lapack_addlibs.txt lapack.pc lapack-uninstalled.pc"
 
@@ -20862,6 +20396,16 @@ if test x$coin_skip_ac_output != xyes; then
       fi
     done
     subdirs="$new_subdirs"
+  fi
+
+  # need to come before AC_OUTPUT
+  if test x$coin_projectdir != xyes; then
+    # write coin_subdirs to a file so that project configuration knows where to find uninstalled projects
+    echo $coin_subdirs > coin_subdirs.txt
+  else
+    # substitute for OBJDIR, needed to setup .pc file for uninstalled project
+    ABSBUILDDIR="`pwd`"
+
   fi
 
   cat >confcache <<\_ACEOF
@@ -21025,34 +20569,6 @@ if test -z "${am__fastdepCXX_TRUE}" && test -z "${am__fastdepCXX_FALSE}"; then
   { { echo "$as_me:$LINENO: error: conditional \"am__fastdepCXX\" was never defined.
 Usually this means the macro was only invoked conditionally." >&5
 echo "$as_me: error: conditional \"am__fastdepCXX\" was never defined.
-Usually this means the macro was only invoked conditionally." >&2;}
-   { (exit 1); exit 1; }; }
-fi
-if test -z "${COIN_HAS_BLAS_TRUE}" && test -z "${COIN_HAS_BLAS_FALSE}"; then
-  { { echo "$as_me:$LINENO: error: conditional \"COIN_HAS_BLAS\" was never defined.
-Usually this means the macro was only invoked conditionally." >&5
-echo "$as_me: error: conditional \"COIN_HAS_BLAS\" was never defined.
-Usually this means the macro was only invoked conditionally." >&2;}
-   { (exit 1); exit 1; }; }
-fi
-if test -z "${COIN_HAS_BLAS_PREINSTALLED_TRUE}" && test -z "${COIN_HAS_BLAS_PREINSTALLED_FALSE}"; then
-  { { echo "$as_me:$LINENO: error: conditional \"COIN_HAS_BLAS_PREINSTALLED\" was never defined.
-Usually this means the macro was only invoked conditionally." >&5
-echo "$as_me: error: conditional \"COIN_HAS_BLAS_PREINSTALLED\" was never defined.
-Usually this means the macro was only invoked conditionally." >&2;}
-   { (exit 1); exit 1; }; }
-fi
-if test -z "${COIN_HAS_LAPACK_TRUE}" && test -z "${COIN_HAS_LAPACK_FALSE}"; then
-  { { echo "$as_me:$LINENO: error: conditional \"COIN_HAS_LAPACK\" was never defined.
-Usually this means the macro was only invoked conditionally." >&5
-echo "$as_me: error: conditional \"COIN_HAS_LAPACK\" was never defined.
-Usually this means the macro was only invoked conditionally." >&2;}
-   { (exit 1); exit 1; }; }
-fi
-if test -z "${COIN_HAS_LAPACK_PREINSTALLED_TRUE}" && test -z "${COIN_HAS_LAPACK_PREINSTALLED_FALSE}"; then
-  { { echo "$as_me:$LINENO: error: conditional \"COIN_HAS_LAPACK_PREINSTALLED\" was never defined.
-Usually this means the macro was only invoked conditionally." >&5
-echo "$as_me: error: conditional \"COIN_HAS_LAPACK_PREINSTALLED\" was never defined.
 Usually this means the macro was only invoked conditionally." >&2;}
    { (exit 1); exit 1; }; }
 fi
@@ -21689,26 +21205,9 @@ s,@ac_c_preproc_warn_flag@,$ac_c_preproc_warn_flag,;t t
 s,@ac_cxx_preproc_warn_flag@,$ac_cxx_preproc_warn_flag,;t t
 s,@RPATH_FLAGS@,$RPATH_FLAGS,;t t
 s,@LT_LDFLAGS@,$LT_LDFLAGS,;t t
-s,@BLASSRCDIR@,$BLASSRCDIR,;t t
-s,@BLASOBJDIR@,$BLASOBJDIR,;t t
-s,@BLASDOCDIR@,$BLASDOCDIR,;t t
-s,@BLASDATADIR@,$BLASDATADIR,;t t
-s,@BLASINSTDIR@,$BLASINSTDIR,;t t
-s,@COIN_HAS_BLAS_TRUE@,$COIN_HAS_BLAS_TRUE,;t t
-s,@COIN_HAS_BLAS_FALSE@,$COIN_HAS_BLAS_FALSE,;t t
-s,@COIN_HAS_BLAS_PREINSTALLED_TRUE@,$COIN_HAS_BLAS_PREINSTALLED_TRUE,;t t
-s,@COIN_HAS_BLAS_PREINSTALLED_FALSE@,$COIN_HAS_BLAS_PREINSTALLED_FALSE,;t t
-s,@LAPACKSRCDIR@,$LAPACKSRCDIR,;t t
-s,@LAPACKOBJDIR@,$LAPACKOBJDIR,;t t
-s,@LAPACKDOCDIR@,$LAPACKDOCDIR,;t t
-s,@LAPACKDATADIR@,$LAPACKDATADIR,;t t
-s,@LAPACKINSTDIR@,$LAPACKINSTDIR,;t t
-s,@COIN_HAS_LAPACK_TRUE@,$COIN_HAS_LAPACK_TRUE,;t t
-s,@COIN_HAS_LAPACK_FALSE@,$COIN_HAS_LAPACK_FALSE,;t t
-s,@COIN_HAS_LAPACK_PREINSTALLED_TRUE@,$COIN_HAS_LAPACK_PREINSTALLED_TRUE,;t t
-s,@COIN_HAS_LAPACK_PREINSTALLED_FALSE@,$COIN_HAS_LAPACK_PREINSTALLED_FALSE,;t t
 s,@LIBEXT@,$LIBEXT,;t t
 s,@VPATH_DISTCLEANFILES@,$VPATH_DISTCLEANFILES,;t t
+s,@ABSBUILDDIR@,$ABSBUILDDIR,;t t
 s,@LIBOBJS@,$LIBOBJS,;t t
 s,@LTLIBOBJS@,$LTLIBOBJS,;t t
 CEOF

@@ -1,5 +1,5 @@
 prefix=@prefix@
-libdir=@LAPACKOBJDIR@
+libdir=@ABSBUILDDIR@
 
 Name: Lapack
 Description: Linear algebra package
