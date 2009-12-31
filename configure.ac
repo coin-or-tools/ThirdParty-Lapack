@@ -50,6 +50,12 @@ AC_COIN_DEBUG_COMPILE(Lapack)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
+# Get the linker flags (FLIBS) that are required for linking against this blas library
+AC_COIN_F77_WRAPPERS
+
+# Tell FINALIZE to add FLIBS to ADDLIBS, so that they get into the .pc files
+coin_need_flibs=yes
+
 # Take care that optimization is disbled for DLAMCH.F 
 AC_ARG_VAR(DLAMCH_FFLAGS,[Fortran compiler options for DLAMCH.F])
 if test "x$DLAMCH_FFLAGS" = x ; then
