@@ -8,7 +8,7 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.lapack INSTALL.LAPACK
 
-thirdpartylibdir = $(prefix)/lib/ThirdParty
+thirdpartylibdir = $(libdir)/coin/ThirdParty
 thirdpartylib_LTLIBRARIES = libcoinlapack.la
 
 LAPACK_FILES = \
@@ -63,11 +63,11 @@ dlamch.obj: dlamch.f
 dlamch.lo: dlamch.f
 	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
-addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Lapack
+addlibsdir = $(datadir)/coin/doc/ThirdParty/Lapack
 addlibs_DATA = lapack_addlibs.txt README
 
-pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
-pkgconfiglib_DATA = lapack.pc
+pkgconfiglibdir = $(libdir)/pkgconfig
+pkgconfiglib_DATA = coinlapack.pc
 
 ########################################################################
 #                         Maintainer Stuff                             #

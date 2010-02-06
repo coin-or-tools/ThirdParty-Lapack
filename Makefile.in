@@ -56,8 +56,8 @@ DIST_COMMON = README $(am__configure_deps) \
 	$(srcdir)/../../config.guess $(srcdir)/../../config.sub \
 	$(srcdir)/../../install-sh $(srcdir)/../../ltmain.sh \
 	$(srcdir)/../../missing $(srcdir)/Makefile.am \
-	$(srcdir)/Makefile.in $(srcdir)/lapack-uninstalled.pc.in \
-	$(srcdir)/lapack.pc.in $(srcdir)/lapack_addlibs.txt.in \
+	$(srcdir)/Makefile.in $(srcdir)/coinlapack-uninstalled.pc.in \
+	$(srcdir)/coinlapack.pc.in $(srcdir)/lapack_addlibs.txt.in \
 	$(top_srcdir)/configure
 @HAVE_EXTERNALS_TRUE@am__append_1 = Externals
 @HAVE_EXTERNALS_TRUE@am__append_2 = .Externals-stamp
@@ -70,8 +70,8 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno configure.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES = lapack_addlibs.txt lapack.pc \
-	lapack-uninstalled.pc
+CONFIG_CLEAN_FILES = lapack_addlibs.txt coinlapack.pc \
+	coinlapack-uninstalled.pc
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
@@ -253,7 +253,7 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 AUTOMAKE_OPTIONS = foreign
 EXTRA_DIST = get.lapack INSTALL.LAPACK $(am__append_1)
-thirdpartylibdir = $(prefix)/lib/ThirdParty
+thirdpartylibdir = $(libdir)/coin/ThirdParty
 thirdpartylib_LTLIBRARIES = libcoinlapack.la
 LAPACK_FILES = \
 	dgetf2.f \
@@ -296,10 +296,10 @@ LAPACK_FILES = \
 
 libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
-addlibsdir = $(prefix)/share/doc/coin/ThirdParty/Lapack
+addlibsdir = $(datadir)/coin/doc/ThirdParty/Lapack
 addlibs_DATA = lapack_addlibs.txt README
-pkgconfiglibdir = $(prefix)/lib/ThirdParty/pkgconfig
-pkgconfiglib_DATA = lapack.pc
+pkgconfiglibdir = $(libdir)/pkgconfig
+pkgconfiglib_DATA = coinlapack.pc
 
 ########################################################################
 #                         Maintainer Stuff                             #
@@ -349,9 +349,9 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 lapack_addlibs.txt: $(top_builddir)/config.status $(srcdir)/lapack_addlibs.txt.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-lapack.pc: $(top_builddir)/config.status $(srcdir)/lapack.pc.in
+coinlapack.pc: $(top_builddir)/config.status $(srcdir)/coinlapack.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-lapack-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/lapack-uninstalled.pc.in
+coinlapack-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/coinlapack-uninstalled.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 install-thirdpartylibLTLIBRARIES: $(thirdpartylib_LTLIBRARIES)
 	@$(NORMAL_INSTALL)

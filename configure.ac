@@ -104,6 +104,6 @@ for file_in_install in $lapack_source_files_in_install; do
   AC_CONFIG_LINKS($file_in_install:LAPACK/INSTALL/$file_in_install)
 done
 
-AC_CONFIG_FILES([Makefile lapack_addlibs.txt lapack.pc lapack-uninstalled.pc])
+AC_CONFIG_FILES([Makefile lapack_addlibs.txt coinlapack.pc coinlapack-uninstalled.pc])
 
 AC_COIN_FINALIZE
