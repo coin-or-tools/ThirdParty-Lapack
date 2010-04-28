@@ -2,6 +2,8 @@
 
 set -e
 
+lapack_ver=3.2.1
+
 wgetcmd=wget
 wgetcount=`which wget 2>/dev/null | wc -w`
 if test ! $wgetcount = 1; then
@@ -20,18 +22,18 @@ echo " "
 
 rm -f lapack.tgz
 echo "Downloading the source code from www.netlib.org..."
-$wgetcmd ftp://www.netlib.org/lapack/lapack-lite-3.1.0.tgz
+$wgetcmd ftp://www.netlib.org/lapack/lapack-${lapack_ver}.tgz
 
 echo "Uncompressing the tarball..."
-gunzip -f lapack-lite-3.1.0.tgz
+gunzip -f lapack-${lapack_ver}.tgz
 
 echo "Unpacking the source code..."
-tar xf lapack-lite-3.1.0.tar lapack-3.1.0/SRC lapack-3.1.0/INSTALL/dlamch.f
+tar xf lapack-${lapack_ver}.tar lapack-${lapack_ver}/SRC lapack-${lapack_ver}/INSTALL/dlamch.f
 rm -rf LAPACK
-mv lapack-3.1.0 LAPACK
+mv lapack-${lapack_ver} LAPACK
 
 echo "Deleting the tar file..."
-rm lapack-lite-3.1.0.tar
+rm lapack-${lapack_ver}.tar
 
 echo " "
 echo "Done downloading the source code for LAPACK."

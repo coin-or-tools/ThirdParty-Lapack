@@ -27,10 +27,12 @@ LAPACK_FILES = \
 	dgetf2.f \
 	dgetrf.f \
 	dgetrs.f \
+	disnan.f \
 	dlabrd.f \
 	dlacpy.f \
 	dlae2.f \
 	dlaev2.f \
+	dlaisnan.f \
 	dlamch.f \
 	dlange.f \
 	dlanst.f \
@@ -39,6 +41,7 @@ LAPACK_FILES = \
 	dlarf.f \
 	dlarfb.f \
 	dlarfg.f \
+	dlarfp.f \
 	dlarft.f \
 	dlartg.f \
 	dlas2.f \
@@ -46,6 +49,8 @@ LAPACK_FILES = \
 	dlaset.f \
 	dlasq1.f \
 	dlasq2.f \
+	dlasq3.f \
+	dlasq4.f \
 	dlasq5.f \
 	dlasq6.f \
 	dlasr.f \
@@ -54,8 +59,6 @@ LAPACK_FILES = \
 	dlassq.f \
 	dlasv2.f \
 	dlatrd.f \
-	dlazq3.f \
-	dlazq4.f \
 	dorg2l.f \
 	dorg2r.f \
 	dorgbr.f \
@@ -78,6 +81,8 @@ LAPACK_FILES = \
 	dsytd2.f \
 	dsytrd.f \
 	ieeeck.f \
+	iladlc.f \
+	iladlr.f \
 	ilaenv.f \
 	iparmq.f
 
