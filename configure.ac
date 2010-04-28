@@ -12,7 +12,7 @@
 
 AC_PREREQ(2.59)
 
-AC_INIT([ThirdPartyLapack],[0.0],
+AC_INIT([ThirdPartyLapack],[1.1],
         [http://projects.coin-or.org/BuildTools/newticket])
 
 AC_COPYRIGHT([
