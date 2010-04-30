@@ -1,9 +1,7 @@
 * text=auto !eol
 /INSTALL.LAPACK -text
 /Makefile.am -text
-/README -text
 /coinlapack-uninstalled.pc.in -text
 /coinlapack.pc.in -text
 /configure -text
 /get.Lapack -text
-/lapack_addlibs.txt.in -text

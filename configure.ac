@@ -53,6 +53,9 @@ AC_COIN_PROG_F77
 # Get the linker flags (FLIBS) that are required for linking against this blas library
 AC_COIN_F77_WRAPPERS
 
+# Check if pkg-config is available (to setup addlibs file)
+AC_COIN_HAS_PKGCONFIG
+
 # Tell FINALIZE to add FLIBS to ADDLIBS, so that they get into the .pc files
 coin_need_flibs=yes
 
@@ -104,6 +107,6 @@ for file_in_install in $lapack_source_files_in_install; do
   AC_CONFIG_LINKS($file_in_install:LAPACK/INSTALL/$file_in_install)
 done
 
-AC_CONFIG_FILES([Makefile lapack_addlibs.txt coinlapack.pc coinlapack-uninstalled.pc])
+AC_CONFIG_FILES([Makefile coinlapack.pc coinlapack-uninstalled.pc])
 
 AC_COIN_FINALIZE

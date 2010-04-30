@@ -91,8 +91,13 @@ dlamch.obj: dlamch.f
 dlamch.lo: dlamch.f
 	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
+if COIN_HAS_PKGCONFIG
 addlibsdir = $(datadir)/coin/doc/ThirdParty/Lapack
-addlibs_DATA = lapack_addlibs.txt README
+addlibs_DATA = lapack_addlibs.txt
+
+lapack_addlibs.txt : coinlapack.pc
+	PKG_CONFIG_PATH=.:$(libdir)/pkgconfig:${PKG_CONFIG_PATH} $(PKG_CONFIG) --libs coinlapack > lapack_addlibs.txt
+endif
 
 pkgconfiglibdir = $(libdir)/pkgconfig
 pkgconfiglib_DATA = coinlapack.pc
@@ -100,6 +105,8 @@ pkgconfiglib_DATA = coinlapack.pc
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################
+
+CLEANFILES = lapack_addlibs.txt
 
 # Files that are generated and should be cleaned with make distclean
 DISTCLEANFILES = $(LAPACK_FILES) $(MAKEOKFILE)
