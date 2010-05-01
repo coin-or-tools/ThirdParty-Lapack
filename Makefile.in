@@ -142,6 +142,7 @@ CDEFS = @CDEFS@
 CFLAGS = @CFLAGS@
 COIN_HAS_PKGCONFIG_FALSE = @COIN_HAS_PKGCONFIG_FALSE@
 COIN_HAS_PKGCONFIG_TRUE = @COIN_HAS_PKGCONFIG_TRUE@
+COIN_PKG_CONFIG_PATH = @COIN_PKG_CONFIG_PATH@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CXX = @CXX@
@@ -765,7 +766,7 @@ dlamch.lo: dlamch.f
 	$(LIBTOOL) --tag=F77 --mode=compile $(F77) $(AM_FFLAGS) $(DLAMCH_FFLAGS) -c -o $@ $<
 
 @COIN_HAS_PKGCONFIG_TRUE@lapack_addlibs.txt : coinlapack.pc
-@COIN_HAS_PKGCONFIG_TRUE@	PKG_CONFIG_PATH=.:$(libdir)/pkgconfig:${PKG_CONFIG_PATH} $(PKG_CONFIG) --libs coinlapack > lapack_addlibs.txt
+@COIN_HAS_PKGCONFIG_TRUE@	PKG_CONFIG_PATH=.:@COIN_PKG_CONFIG_PATH@ $(PKG_CONFIG) --libs coinlapack > lapack_addlibs.txt
 
 install-doc: $(DocFiles)
 	test -z "$(DocInstallDir)" || $(mkdir_p) "$(DESTDIR)$(DocInstallDir)"

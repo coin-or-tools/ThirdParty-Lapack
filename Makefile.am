@@ -96,7 +96,7 @@ addlibsdir = $(datadir)/coin/doc/ThirdParty/Lapack
 addlibs_DATA = lapack_addlibs.txt
 
 lapack_addlibs.txt : coinlapack.pc
-	PKG_CONFIG_PATH=.:$(libdir)/pkgconfig:${PKG_CONFIG_PATH} $(PKG_CONFIG) --libs coinlapack > lapack_addlibs.txt
+	PKG_CONFIG_PATH=.:@COIN_PKG_CONFIG_PATH@ $(PKG_CONFIG) --libs coinlapack > lapack_addlibs.txt
 endif
 
 pkgconfiglibdir = $(libdir)/pkgconfig
