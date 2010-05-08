@@ -1,0 +1,8 @@
+prefix=@prefix@
+libdir=@ABSBUILDDIR@
+
+Name: Lapack
+Description: Linear algebra package
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lcoinlapack @ADDLIBS@
+Cflags:
