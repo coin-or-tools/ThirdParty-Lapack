@@ -3,5 +3,11 @@
 /Makefile.am -text
 /coinlapack-uninstalled.pc.in -text
 /coinlapack.pc.in -text
+/config.guess -text
+/config.sub -text
 /configure -text
+/depcomp -text
 /get.Lapack -text
+/install-sh -text
+/ltmain.sh -text
+/missing -text

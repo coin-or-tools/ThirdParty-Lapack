@@ -116,4 +116,4 @@ CLEANFILES = lapack_addlibs.txt
 # Files that are generated and should be cleaned with make distclean
 DISTCLEANFILES = $(LAPACK_FILES) $(MAKEOKFILE)
 
-include ../../BuildTools/Makemain.inc
+include BuildTools/Makemain.inc
