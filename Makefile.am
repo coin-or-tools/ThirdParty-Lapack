@@ -106,13 +106,16 @@ install-data-hook:
 	@$(mkdir_p) "$(addlibsdir)"
 	PKG_CONFIG_PATH=@COIN_PKG_CONFIG_PATH@ \
 	$(PKG_CONFIG) --libs coinlapack > $(addlibsdir)/lapack_addlibs.txt
+	
+uninstall-hook:
+	rm -f $(addlibsdir)/lapack_addlibs.txt
 endif
 
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################
 
-CLEANFILES = lapack_addlibs.txt
+CLEANFILES =
 
 # Files that are generated and should be cleaned with make distclean
 DISTCLEANFILES = $(LAPACK_FILES) $(MAKEOKFILE)
