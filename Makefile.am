@@ -111,6 +111,9 @@ uninstall-hook:
 	rm -f $(addlibsdir)/lapack_addlibs.txt
 endif
 
+test: $(libampl)
+	@echo "No test available for Lapack."
+
 ########################################################################
 #                         Maintainer Stuff                             #
 ########################################################################
