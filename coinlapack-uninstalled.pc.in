@@ -4,5 +4,5 @@ libdir=@ABSBUILDDIR@
 Name: Lapack
 Description: Linear algebra package
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lcoinlapack @LAPACK_PCLIBS@
+Libs: ${libdir}/libcoinlapack.la @LAPACK_PCLIBS@
 Cflags:
