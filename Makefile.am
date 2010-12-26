@@ -8,8 +8,7 @@ AUTOMAKE_OPTIONS = foreign
 
 EXTRA_DIST = get.lapack INSTALL.LAPACK
 
-thirdpartylibdir = $(libdir)/coin/ThirdParty
-thirdpartylib_LTLIBRARIES = libcoinlapack.la
+lib_LTLIBRARIES = libcoinlapack.la
 
 LAPACK_FILES = \
 	dbdsqr.f \
