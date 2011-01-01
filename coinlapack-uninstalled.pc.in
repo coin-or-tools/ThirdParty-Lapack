@@ -3,6 +3,7 @@ libdir=@ABSBUILDDIR@
 
 Name: Lapack
 Description: Linear algebra package
+URL: https://projects.coin-or.org/BuildTools
 Version: @PACKAGE_VERSION@
 Libs: ${libdir}/libcoinlapack.la @LAPACK_PCLIBS@
 Cflags:
