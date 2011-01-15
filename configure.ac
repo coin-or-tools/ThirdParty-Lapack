@@ -49,15 +49,17 @@ AC_COIN_DEBUG_COMPILE(Lapack)
 # Get the name of the Fortran compiler and appropriate compiler options
 AC_COIN_PROG_F77
 
-# Get the linker flags (FLIBS) that are required for linking against this blas library
+# Get the linker flags (FLIBS) that are required for linking against this library
 AC_COIN_F77_WRAPPERS
 
-# Check if pkg-config is available (to setup addlibs file)
-AC_COIN_HAS_PKGCONFIG
+# Check for Blas
+AC_COIN_CHECK_PACKAGE_BLAS(LapackLib)
+if test $coin_has_blas != yes; then
+  AC_MSG_ERROR([Required package BLAS not found.])
+fi
 
-# Add FLIBS to LAPACK_PCLIBS, so that they get into the .pc files
-LAPACK_PCLIBS="$FLIBS"
-AC_SUBST(LAPACK_PCLIBS)
+# FLIBS will be needed to link against this library, so add them to LAPACKLIB_PCLIBS
+LAPACKLIB_PCLIBS="$LAPACKLIB_PCLIBS $FLIBS"
 
 # Take care that optimization is disbled for DLAMCH.F 
 AC_ARG_VAR(DLAMCH_FFLAGS,[Fortran compiler options for DLAMCH.F])
