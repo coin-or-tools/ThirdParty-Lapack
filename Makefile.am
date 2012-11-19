@@ -133,6 +133,7 @@ LAPACK_FILES = \
 	dsterf.f \
 	dsyev.f \
 	dsyevr.f \
+	dsyevx.f \
 	dsytd2.f \
 	dsytf2.f \
 	dsytrd.f \
