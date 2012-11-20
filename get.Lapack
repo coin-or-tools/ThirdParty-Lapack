@@ -2,7 +2,7 @@
 
 set -e
 
-lapack_ver=3.2.1
+lapack_ver=3.4.2
 
 wgetcmd=wget
 wgetcount=`which wget 2>/dev/null | wc -l`

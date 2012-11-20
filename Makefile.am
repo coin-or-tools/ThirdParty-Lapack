@@ -70,7 +70,6 @@ LAPACK_FILES = \
 	dlarf.f \
 	dlarfb.f \
 	dlarfg.f \
-	dlarfp.f \
 	dlarft.f \
 	dlarfx.f \
 	dlarnv.f \

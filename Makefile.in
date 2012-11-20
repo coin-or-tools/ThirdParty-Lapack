@@ -88,22 +88,22 @@ am__objects_1 = dbdsqr.lo dgebal.lo dgebak.lo dgebd2.lo dgebrd.lo \
 	dlamch.lo dlaneg.lo dlange.lo dlanhs.lo dlanst.lo dlansy.lo \
 	dlanv2.lo dlapy2.lo dlapy3.lo dlaqr0.lo dlaqr1.lo dlaqr2.lo \
 	dlaqr3.lo dlaqr4.lo dlaqr5.lo dlarf.lo dlarfb.lo dlarfg.lo \
-	dlarfp.lo dlarft.lo dlarfx.lo dlarnv.lo dlarra.lo dlarrb.lo \
-	dlarrc.lo dlarrd.lo dlarre.lo dlarrf.lo dlarrj.lo dlarrk.lo \
-	dlarrr.lo dlarrv.lo dlartg.lo dlartv.lo dlaruv.lo dlar1v.lo \
-	dlas2.lo dlascl.lo dlaset.lo dlasq1.lo dlasq2.lo dlasq3.lo \
-	dlasq4.lo dlasq5.lo dlasq6.lo dlasr.lo dlasrt.lo dlaswp.lo \
-	dlassq.lo dlasv2.lo dlasyf.lo dlasy2.lo dlatrd.lo dorg2l.lo \
-	dorg2r.lo dorgbr.lo dorghr.lo dorglq.lo dorgl2.lo dorgql.lo \
-	dorgqr.lo dorgtr.lo dorm2r.lo dormbr.lo dormhr.lo dorml2.lo \
-	dormlq.lo dormql.lo dormqr.lo dormtr.lo dorm2l.lo dpotf2.lo \
-	dpotrf.lo dpotrs.lo dstebz.lo dstein.lo dstemr.lo dsteqr.lo \
-	dsterf.lo dsyev.lo dsyevr.lo dsyevx.lo dsytd2.lo dsytf2.lo \
-	dsytrd.lo dsytrf.lo dsytri.lo dtgevc.lo dtrevc.lo dtrexc.lo \
-	dtrti2.lo dtrtri.lo dtrtrs.lo ieeeck.lo iladlc.lo iladlr.lo \
-	ilaenv.lo iparmq.lo sgetf2.lo sgetrf.lo slamch.lo slaswp.lo \
-	zgetf2.lo zgetrf.lo zlacgv.lo zlacpy.lo zlaev2.lo zlaswp.lo \
-	zpotf2.lo zrot.lo zsymv.lo zsyr.lo zsytri.lo
+	dlarft.lo dlarfx.lo dlarnv.lo dlarra.lo dlarrb.lo dlarrc.lo \
+	dlarrd.lo dlarre.lo dlarrf.lo dlarrj.lo dlarrk.lo dlarrr.lo \
+	dlarrv.lo dlartg.lo dlartv.lo dlaruv.lo dlar1v.lo dlas2.lo \
+	dlascl.lo dlaset.lo dlasq1.lo dlasq2.lo dlasq3.lo dlasq4.lo \
+	dlasq5.lo dlasq6.lo dlasr.lo dlasrt.lo dlaswp.lo dlassq.lo \
+	dlasv2.lo dlasyf.lo dlasy2.lo dlatrd.lo dorg2l.lo dorg2r.lo \
+	dorgbr.lo dorghr.lo dorglq.lo dorgl2.lo dorgql.lo dorgqr.lo \
+	dorgtr.lo dorm2r.lo dormbr.lo dormhr.lo dorml2.lo dormlq.lo \
+	dormql.lo dormqr.lo dormtr.lo dorm2l.lo dpotf2.lo dpotrf.lo \
+	dpotrs.lo dstebz.lo dstein.lo dstemr.lo dsteqr.lo dsterf.lo \
+	dsyev.lo dsyevr.lo dsyevx.lo dsytd2.lo dsytf2.lo dsytrd.lo \
+	dsytrf.lo dsytri.lo dtgevc.lo dtrevc.lo dtrexc.lo dtrti2.lo \
+	dtrtri.lo dtrtrs.lo ieeeck.lo iladlc.lo iladlr.lo ilaenv.lo \
+	iparmq.lo sgetf2.lo sgetrf.lo slamch.lo slaswp.lo zgetf2.lo \
+	zgetrf.lo zlacgv.lo zlacpy.lo zlaev2.lo zlaswp.lo zpotf2.lo \
+	zrot.lo zsymv.lo zsyr.lo zsytri.lo
 am_libcoinlapack_la_OBJECTS = $(am__objects_1)
 libcoinlapack_la_OBJECTS = $(am_libcoinlapack_la_OBJECTS)
 DEFAULT_INCLUDES = -I. -I$(srcdir)
@@ -351,7 +351,6 @@ LAPACK_FILES = \
 	dlarf.f \
 	dlarfb.f \
 	dlarfg.f \
-	dlarfp.f \
 	dlarft.f \
 	dlarfx.f \
 	dlarnv.f \
