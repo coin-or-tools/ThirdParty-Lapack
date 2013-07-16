@@ -25,7 +25,7 @@ echo " "
 
 rm -f lapack.tgz
 echo "Downloading the source code from www.netlib.org..."
-$wgetcmd ftp://www.netlib.org/lapack/lapack-${lapack_ver}.tgz
+$wgetcmd http://www.netlib.org/lapack/lapack-${lapack_ver}.tgz
 
 echo "Uncompressing the tarball..."
 gunzip -f lapack-${lapack_ver}.tgz
