@@ -23,9 +23,14 @@ echo " "
 echo "Running script for downloading the source code for LAPACK"
 echo " "
 
-rm -f lapack.tgz
+rm -f lapack-${lapack_ver}.tgz
 echo "Downloading the source code from www.netlib.org..."
-$wgetcmd http://www.netlib.org/lapack/lapack-${lapack_ver}.tgz
+if ! $wgetcmd http://www.netlib.org/lapack/lapack-${lapack_ver}.tgz ;
+then
+  echo
+  echo "Failed, try downloading the source code from netlib.sandia.gov..."
+  $wgetcmd http://netlib.sandia.gov/lapack/lapack-${lapack_ver}.tgz
+fi
 
 echo "Uncompressing the tarball..."
 gunzip -f lapack-${lapack_ver}.tgz
