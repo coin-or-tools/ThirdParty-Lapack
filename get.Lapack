@@ -24,12 +24,18 @@ echo "Running script for downloading the source code for LAPACK"
 echo " "
 
 rm -f lapack-${lapack_ver}.tgz
-echo "Downloading the source code from www.netlib.org..."
-if ! $wgetcmd http://www.netlib.org/lapack/lapack-${lapack_ver}.tgz ;
+
+echo "Downloading the source code from projects.coin-or.org..."
+if ! $wgetcmd https://projects.coin-or.org/svn/BuildTools/ThirdParty/Lapack/src/lapack-${lapack_ver}.tgz ;
 then
   echo
-  echo "Failed, try downloading the source code from netlib.sandia.gov..."
-  $wgetcmd http://netlib.sandia.gov/lapack/lapack-${lapack_ver}.tgz
+  echo "Failed, try downloading the source code from www.netlib.org..."
+  if ! $wgetcmd http://www.netlib.org/lapack/lapack-${lapack_ver}.tgz ;
+  then
+    echo
+    echo "Failed, try downloading the source code from netlib.sandia.gov..."
+    $wgetcmd http://netlib.sandia.gov/lapack/lapack-${lapack_ver}.tgz
+  fi
 fi
 
 echo "Uncompressing the tarball..."
