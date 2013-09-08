@@ -4,7 +4,7 @@ set -e
 
 lapack_ver=3.4.2
 
-wgetcmd="wget --no-check-certificate"
+wgetcmd="wget"
 wgetcount=`which wget 2>/dev/null | wc -l`
 if test ! $wgetcount = 1; then
   echo "Utility wget not found in your PATH."
@@ -34,7 +34,29 @@ then
   then
     echo
     echo "Failed, try downloading the source code from netlib.sandia.gov..."
-    $wgetcmd http://netlib.sandia.gov/lapack/lapack-${lapack_ver}.tgz
+    if ! $wgetcmd http://netlib.sandia.gov/lapack/lapack-${lapack_ver}.tgz
+    then
+      if test "$wgetcmd" = wget ;
+      then
+        echo -n "Failed, try downloading from https://projects.coin-or.org without certificate check? (y/n) "
+        if test "$1" = "-y" ;
+        then
+          doit=y
+          echo y
+        else
+          read -n 1 doit
+          echo
+        fi
+        if test "$doit" = y ;
+        then
+          $wgetcmd --no-check-certificate https://projects.coin-or.org/svn/BuildTools/ThirdParty/Lapack/src/lapack-${lapack_ver}.tgz
+        else
+          exit 1;
+        fi
+      else
+        exit 1;
+      fi
+    fi
   fi
 fi
 
