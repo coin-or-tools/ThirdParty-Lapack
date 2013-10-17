@@ -125,6 +125,9 @@ LAPACK_FILES = \
 	dpotf2.f \
 	dpotrf.f \
 	dpotrs.f \
+	dppsv.f \
+	dpptrf.f \
+	dpptrs.f \
 	dstebz.f \
 	dstein.f \
 	dstemr.f \
