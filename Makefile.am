@@ -170,6 +170,10 @@ LAPACK_FILES = \
 
 libcoinlapack_la_SOURCES = $(LAPACK_FILES)
 
+if DEPENDENCY_LINKING
+libcoinlapack_la_LIBADD = $(LAPACKLIB_LIBS)
+endif
+
 libcoinlapack_la_LDFLAGS = $(LT_LDFLAGS)
 
 dlamch.o: dlamch.f
