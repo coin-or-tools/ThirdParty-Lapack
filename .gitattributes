@@ -1,0 +1,2 @@
+* text=auto !eol
+/lapack-3.4.2.tgz -text svneol=unset#application/gzip
