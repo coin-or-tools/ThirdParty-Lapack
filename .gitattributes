@@ -1,5 +1,6 @@
 * text=auto !eol
 /INSTALL.LAPACK -text
+/LICENSE -text
 /Makefile.am -text
 /coinlapack-uninstalled.pc.in -text
 /coinlapack.pc.in -text
