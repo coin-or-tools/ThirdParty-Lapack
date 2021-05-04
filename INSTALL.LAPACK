@@ -22,12 +22,12 @@ you tell the configure script where it is (using
 --with-lapack="-LPATH/TO/LAPACKLIBDIR -llapack" )
 
 Alternatively, if you want to have the necessary LAPACK routines compiled 
-within this distribution, please download the 'lapack-3.2.1.tgz' tarball
+within this distribution, please download the 'lapack-3.4.2.tgz' tarball
 from http://www.netlib.org/lapack and unpack it in this directory:
 
-gunzip lapack-3.2.1.tgz
-tar xf lapack-3.2.1.tar
-mv lapack-3.2.1 LAPACK
+gunzip lapack-3.4.2.tgz
+tar xf lapack-3.4.2.tar
+mv lapack-3.4.2 LAPACK
 
 The last step is necessary since the projects expect the source code to
 be in that directory.
