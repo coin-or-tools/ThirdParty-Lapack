@@ -26,7 +26,7 @@ echo " "
 rm -f lapack-${lapack_ver}.tgz
 
 echo "Downloading the source code from coin-or-tools.github.io..."
-if ! $wgetcmd http://coin-or-tools.github.io/ThirdParty-Blas/lapack-${lapack_ver}.tgz ;
+if ! $wgetcmd http://coin-or-tools.github.io/ThirdParty-Lapack/lapack-${lapack_ver}.tgz ;
 then
   echo
   echo "Failed, try downloading the source code from www.netlib.org..."
